@@ -3,750 +3,233 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Wildan Fauzy is an author from Indonesia. Write novels, short stories, essays. Pig pen and piglet book a collection of stories. Wildan was born in Cirebon, West Java, Indonesia, on March 26, 1996. Raised in a small village called Budur, about an hour's drive from the city of Cirebon.">
-    <meta name="keywords" content="Wildan Fauzy, penulis indonesia, novel, cerpen, kandang babi, anak babi, penulis amatir">
-    <meta name="author" content="Wildan Fauzy">
     <title>Wildan Fauzy - Penulis amatir</title>
-    
-    <!-- Social Media Meta Tags -->
-    <meta property="og:title" content="Wildan Fauzy - Penulis amatir">
-    <meta property="og:description" content="Wildan Fauzy is an author from Indonesia. Write novels, short stories, essays.">
-    <meta property="og:image" content="https://wildan.fauzy.eu.org/pixel-author.png">
-    <meta property="og:url" content="https://wildan.fauzy.eu.org">
-    <meta name="twitter:card" content="summary_large_image">
-    
+    <meta name="description" content="Wildan Fauzy adalah penulis dari Indonesia. Menulis novel, cerpen, esai. Buku kandang babi dan anak babi kumpulan cerita.">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Pixel Font */
-        @font-face {
-            font-family: 'PixelFont';
-            src: url('https://cdnjs.cloudflare.com/ajax/libs/VT323/1.3.1/VT323-Regular.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
+        :root {
+            --bg: #1a1a1a;
+            --text: #00ff00;
+            --pixel: #4a4a4a;
+            --hover: #ff00ff;
         }
-        
-        /* Reset and Base Styles */
-        *, *::before, *::after {
+
+        * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-        
+
         body {
-            font-family: 'PixelFont', monospace;
-            background-color: #181425;
-            color: #e8e8e8;
+            font-family: 'Courier New', monospace;
+            background: var(--bg);
+            color: var(--text);
             line-height: 1.6;
-            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23222034' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M0 0h20v20H0V0zm20 20h20v20H20V20z'/%3E%3C/g%3E%3C/svg%3E");
+            transition: 0.3s;
         }
-        
-        /* Animation Keyframes */
-        @keyframes pixelFade {
-            0% { opacity: 0.7; }
-            50% { opacity: 1; }
-            100% { opacity: 0.7; }
+
+        .pixel-border {
+            border: 4px solid var(--text);
+            position: relative;
+            margin: 20px;
+            box-shadow: 8px 8px 0 var(--pixel);
         }
-        
-        @keyframes pixelFloat {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-            100% { transform: translateY(0); }
-        }
-        
-        @keyframes glitch {
-            0% { transform: translate(0); }
-            20% { transform: translate(-2px, 2px); }
-            40% { transform: translate(-2px, -2px); }
-            60% { transform: translate(2px, 2px); }
-            80% { transform: translate(2px, -2px); }
-            100% { transform: translate(0); }
-        }
-        
-        /* Container */
+
         .container {
-            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 20px;
         }
-        
+
         /* Header */
         header {
-            padding: 20px 0;
-            border-bottom: 4px solid #ff77a8;
-            position: relative;
+            text-align: center;
+            padding: 2rem 0;
+            border-bottom: 4px dotted var(--text);
         }
-        
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
+
+        .pixel-logo {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 2.5rem;
+            text-shadow: 4px 4px 0 var(--pixel);
+            margin-bottom: 1rem;
         }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: #ff77a8;
-            font-size: 24px;
-            letter-spacing: 1px;
-            animation: pixelFade 3s infinite;
-        }
-        
-        .logo-img {
-            width: 40px;
-            height: 40px;
-            margin-right: 10px;
-            image-rendering: pixelated;
-        }
-        
+
         /* Navigation */
-        nav ul {
-            display: flex;
-            list-style: none;
+        nav {
+            margin: 1rem 0;
         }
-        
-        nav li {
-            margin-left: 20px;
-        }
-        
-        nav a {
-            color: #83769c;
+
+        .nav-link {
+            color: var(--text);
             text-decoration: none;
-            font-size: 18px;
-            padding: 5px 10px;
-            transition: all 0.3s ease;
-            position: relative;
+            margin: 0 1rem;
+            padding: 0.5rem;
+            border: 2px solid transparent;
         }
-        
-        nav a:hover {
-            color: #ff77a8;
+
+        .nav-link:hover {
+            border-color: var(--hover);
         }
-        
-        nav a:hover::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 2px;
-            background-color: #ff77a8;
-            animation: pixelFade 2s infinite;
-        }
-        
-        /* Mobile Menu Toggle */
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 30px;
-            height: 21px;
-            cursor: pointer;
-        }
-        
-        .menu-toggle span {
-            display: block;
-            height: 3px;
-            width: 100%;
-            background-color: #ff77a8;
-            transition: all 0.3s ease;
-        }
-        
-        /* Hero Section */
-        .hero {
-            padding: 60px 0;
-            text-align: center;
-            position: relative;
-        }
-        
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            color: #ff77a8;
-            text-shadow: 3px 3px 0 #29366f;
-            letter-spacing: 2px;
-        }
-        
-        .hero p {
-            font-size: 20px;
-            max-width: 800px;
-            margin: 0 auto 30px;
-            color: #a3a7c2;
-        }
-        
-        .hero-img {
-            width: 150px;
-            height: 150px;
-            margin-bottom: 20px;
-            border: 4px solid #ff77a8;
-            padding: 5px;
-            background-color: #29366f;
-            animation: pixelFloat 4s ease-in-out infinite;
-            image-rendering: pixelated;
-        }
-        
-        /* Search Bar */
-        .search-bar {
-            max-width: 500px;
-            margin: 0 auto 40px;
-            position: relative;
-        }
-        
-        .search-bar input {
-            width: 100%;
-            padding: 12px 20px;
-            font-family: 'PixelFont', monospace;
-            font-size: 16px;
-            border: none;
-            background-color: #29366f;
-            color: #e8e8e8;
-            border: 2px solid #ff77a8;
-            outline: none;
-        }
-        
-        .search-bar button {
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: none;
-            border: none;
-            color: #ff77a8;
-            cursor: pointer;
-            font-size: 18px;
-        }
-        
-        /* Books Section */
-        .books {
-            padding: 60px 0;
-        }
-        
-        .section-title {
-            font-size: 36px;
-            margin-bottom: 40px;
-            color: #ff77a8;
-            text-align: center;
-            position: relative;
-            text-shadow: 2px 2px 0 #29366f;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 4px;
-            background-color: #ff77a8;
-        }
-        
-        .books-grid {
+
+        /* Book Grid */
+        .book-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
         }
-        
+
         .book-card {
-            background-color: #29366f;
-            border: 4px solid #38b764;
-            padding: 20px;
-            transition: transform 0.3s ease;
-            position: relative;
+            background: #2a2a2a;
+            padding: 1rem;
+            border: 3px solid var(--text);
         }
-        
-        .book-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .book-card:hover::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 119, 168, 0.1);
-            animation: glitch 0.3s infinite;
-            pointer-events: none;
-        }
-        
+
         .book-cover {
             width: 100%;
-            height: 300px;
+            height: 400px;
             object-fit: cover;
-            margin-bottom: 15px;
-            border: 2px solid #38b764;
-            image-rendering: pixelated;
+            border: 2px solid var(--text);
         }
-        
-        .book-title {
-            font-size: 24px;
-            margin-bottom: 10px;
-            color: #38b764;
-        }
-        
-        .book-meta {
-            margin-bottom: 15px;
-            font-size: 14px;
-            color: #a3a7c2;
-        }
-        
-        .book-meta span {
-            display: block;
-            margin-bottom: 5px;
-        }
-        
-        .book-synopsis {
-            font-size: 16px;
-            color: #e8e8e8;
-            margin-bottom: 20px;
-        }
-        
-        .book-btn {
-            display: inline-block;
-            padding: 8px 16px;
-            background-color: #38b764;
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            border: none;
+
+        /* Dark Mode Toggle */
+        .dark-mode-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
             cursor: pointer;
+            padding: 10px;
+            border: 2px solid var(--text);
         }
-        
-        .book-btn:hover {
-            background-color: #3ca374;
-            transform: translateY(-2px);
-        }
-        
-        /* About Section */
-        .about {
-            padding: 60px 0;
-            background-color: #29366f;
-            position: relative;
-        }
-        
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-        
-        .about-img {
-            flex: 0 0 300px;
-            width: 300px;
-            height: 300px;
-            object-fit: cover;
-            border: 4px solid #ff77a8;
-            padding: 5px;
-            background-color: #181425;
-            image-rendering: pixelated;
-        }
-        
-        .about-text {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .about-text h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            color: #ff77a8;
-            text-shadow: 2px 2px 0 #181425;
-        }
-        
-        .about-text p {
-            font-size: 18px;
-            color: #e8e8e8;
-            margin-bottom: 20px;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: #181425;
-            padding: 40px 0;
-            border-top: 4px solid #ff77a8;
-        }
-        
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-        
-        .footer-logo {
-            flex: 0 0 300px;
-        }
-        
-        .footer-logo a {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: #ff77a8;
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
-        
-        .footer-logo p {
-            font-size: 16px;
-            color: #a3a7c2;
-        }
-        
-        .footer-links {
-            flex: 0 0 calc(50% - 350px);
-            min-width: 200px;
-        }
-        
-        .footer-links h3 {
-            font-size: 20px;
-            margin-bottom: 20px;
-            color: #ff77a8;
-        }
-        
-        .footer-links ul {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-links a {
-            color: #a3a7c2;
-            text-decoration: none;
-            font-size: 16px;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            color: #ff77a8;
-        }
-        
-        .social-links {
-            flex: 0 0 200px;
-        }
-        
-        .social-links h3 {
-            font-size: 20px;
-            margin-bottom: 20px;
-            color: #ff77a8;
-        }
-        
-        .social-icons {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .social-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: #29366f;
-            color: #ff77a8;
-            text-decoration: none;
-            font-size: 20px;
-            transition: all 0.3s ease;
-            border: 2px solid #ff77a8;
-        }
-        
-        .social-icon:hover {
-            background-color: #ff77a8;
-            color: #ffffff;
-            transform: translateY(-5px);
-        }
-        
-        .copyright {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 2px solid #29366f;
-            font-size: 14px;
-            color: #83769c;
-        }
-        
-        /* Pixel Art Elements */
-        .pixel-element {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: #ff77a8;
-            animation: pixelFloat 5s ease-in-out infinite;
-            image-rendering: pixelated;
-            opacity: 0.5;
-        }
-        
-        .pixel-element:nth-child(odd) {
-            background-color: #38b764;
-        }
-        
-        /* Responsive Design */
-        @media screen and (max-width: 768px) {
-            .menu-toggle {
-                display: flex;
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .pixel-logo {
+                font-size: 1.5rem;
             }
             
-            nav ul {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: #181425;
-                padding: 20px;
-                z-index: 100;
-                border-bottom: 4px solid #ff77a8;
-            }
-            
-            nav ul.show {
-                display: flex;
-            }
-            
-            nav li {
-                margin: 10px 0;
-            }
-            
-            .hero h1 {
-                font-size: 36px;
-            }
-            
-            .hero p {
-                font-size: 18px;
-            }
-            
-            .section-title {
-                font-size: 30px;
-            }
-            
-            .about-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .footer-content {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-            
-            .footer-links, .social-links {
-                flex: 0 0 100%;
-            }
-            
-            .social-icons {
-                justify-content: center;
+            .book-grid {
+                grid-template-columns: 1fr;
             }
         }
-        
-        @media screen and (max-width: 480px) {
-            .hero h1 {
-                font-size: 28px;
-            }
-            
-            .hero p {
-                font-size: 16px;
-            }
-            
-            .section-title {
-                font-size: 24px;
-            }
-            
-            .book-card {
-                padding: 15px;
-            }
-            
-            .book-title {
-                font-size: 20px;
-            }
+
+        /* Animations */
+        @keyframes pixelate {
+            0% { transform: scale(1); }
+            50% { transform: scale(0.95); }
+            100% { transform: scale(1); }
+        }
+
+        .pixel-animate:hover {
+            animation: pixelate 0.3s steps(2) infinite;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container nav-container">
-            <a href="#" class="logo">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23181425'/%3E%3Cpath d='M3,3 h10 v2 h-8 v2 h6 v2 h-6 v2 h8 v2 h-10 z' fill='%23ff77a8'/%3E%3C/svg%3E" alt="W" class="logo-img">
-                <span>Wildan Fauzy</span>
-            </a>
-            
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            
+    <div class="container">
+        <header class="pixel-border">
+            <h1 class="pixel-logo">Wildan Fauzy</h1>
             <nav>
-                <ul>
-                    <li><a href="#beranda">Beranda</a></li>
-                    <li><a href="#buku">Buku</a></li>
-                    <li><a href="#tentang">Tentang</a></li>
-                    <li><a href="#kontak">Kontak</a></li>
-                </ul>
+                <a href="#buku" class="nav-link pixel-animate">Buku</a>
+                <a href="#tentang" class="nav-link pixel-animate">Tentang</a>
+                <a href="#kontak" class="nav-link pixel-animate">Kontak</a>
             </nav>
-        </div>
-    </header>
-    
-    <!-- Hero Section -->
-    <section class="hero" id="beranda">
-        <div class="container">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2329366f'/%3E%3Ccircle cx='32' cy='20' r='12' fill='%23ff77a8'/%3E%3Crect x='20' y='32' width='24' height='24' fill='%23ff77a8'/%3E%3Ccircle cx='24' cy='16' r='2' fill='%23ffffff'/%3E%3C/svg%3E" alt="Pixel Art Author" class="hero-img">
-            <h1>Wildan Fauzy</h1>
-            <p>Penulis amatir dari Indonesia. Menulis novel, cerpen, dan esai. Lahir di Cirebon, Jawa Barat, Indonesia, pada 26 Maret 1996.</p>
-            
-            <div class="search-bar">
-                <input type="text" placeholder="Cari buku atau tulisan...">
-                <button>🔍</button>
-            </div>
-        </div>
-        
-        <!-- Pixel Art Elements -->
-        <div class="pixel-element" style="top: 20%; left: 10%;"></div>
-        <div class="pixel-element" style="top: 70%; left: 20%;"></div>
-        <div class="pixel-element" style="top: 30%; right: 15%;"></div>
-        <div class="pixel-element" style="top: 80%; right: 10%;"></div>
-    </section>
-    
-    <!-- Books Section -->
-    <section class="books" id="buku">
-        <div class="container">
-            <h2 class="section-title">Karya-karya</h2>
-            
-            <div class="books-grid">
-                <!-- Book 1 -->
-                <div class="book-card">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 300'%3E%3Crect width='200' height='300' fill='%2329366f'/%3E%3Ctext x='100' y='150' fill='%23ff77a8' font-family='monospace' font-size='20' text-anchor='middle'%3EKandang Babi%3C/text%3E%3Cpath d='M50,200 h100 v50 h-100 z' fill='%2338b764'/%3E%3Cpath d='M60,220 h10 v10 h-10 z M75,220 h10 v10 h-10 z M130,220 h10 v10 h-10 z' fill='%23ff77a8'/%3E%3C/svg%3E" alt="Kandang Babi" class="book-cover">
-                    <h3 class="book-title">Kandang Babi</h3>
-                    <div class="book-meta">
-                        <span>Novel (2017)</span>
-                        <span>Penerbit: Guepedia</span>
-                        <span>ISBN: 9786024430986</span>
-                        <span>192 halaman</span>
+        </header>
+
+        <main>
+            <section id="buku" class="pixel-border">
+                <h2>Karya Buku</h2>
+                <div class="book-grid">
+                    <!-- Buku 1 -->
+                    <div class="book-card pixel-animate">
+                        <img src="https://via.placeholder.com/300x400.png?text=Kandang+Babi" 
+                             alt="Cover Kandang Babi" 
+                             class="book-cover">
+                        <h3>Kandang Babi (2017)</h3>
+                        <p>Novel | 192 halaman</p>
+                        <p>ISBN: 9786024430986</p>
+                        <details>
+                            <summary>Sinopsis</summary>
+                            <p>Kandang babi hanya julukan sebuah tempat tinggal...</p>
+                        </details>
                     </div>
-                    <p class="book-synopsis">Kandang babi hanya julukan sebuah tempat tinggal, Benda mati dan juga tidak bernapas, tetapi mempunyai nama, perkenalkan namanya adalah "Kandang Babi"...</p>
-                    <a href="#" class="book-btn">Baca selengkapnya</a>
-                </div>
-                
-                <!-- Book 2 -->
-                <div class="book-card">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 300'%3E%3Crect width='200' height='300' fill='%2329366f'/%3E%3Ctext x='100' y='150' fill='%23ff77a8' font-family='monospace' font-size='20' text-anchor='middle'%3EAnak Babi%3C/text%3E%3Cpath d='M50,200 h100 v50 h-100 z' fill='%2338b764'/%3E%3Cpath d='M80,210 a20,20 0 1,0 40,0 a20,20 0 1,0 -40,0 M70,240 h10 v10 h-10 z M120,240 h10 v10 h-10 z' fill='%23ff77a8'/%3E%3C/svg%3E" alt="Anak Babi" class="book-cover">
-                    <h3 class="book-title">Anak Babi</h3>
-                    <div class="book-meta">
-                        <span>Kumpulan Cerpen (2019)</span>
-                        <span>Penerbit: Guepedia</span>
-                        <span>ISBN: 9786237391449</span>
-                        <span>90 halaman</span>
+
+                    <!-- Buku 2 -->
+                    <div class="book-card pixel-animate">
+                        <img src="https://via.placeholder.com/300x400.png?text=Anak+Babi" 
+                             alt="Cover Anak Babi" 
+                             class="book-cover">
+                        <h3>Anak Babi (2019)</h3>
+                        <p>Kumpulan Cerpen | 90 halaman</p>
+                        <p>ISBN: 9786237391449</p>
+                        <details>
+                            <summary>Sinopsis</summary>
+                            <p>Anak babi sekumpulan cerita adalah kumpulan tulisan...</p>
+                        </details>
                     </div>
-                    <p class="book-synopsis">Anak babi sekumpulan cerita adalah kumpulan tulisan dari penulis sendiri yang masih berceceran, dikumpulkan tulisan tersebut menjadikan judul "Anak babi sekumpulan cerita"...</p>
-                    <a href="#" class="book-btn">Baca selengkapnya</a>
                 </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- About Section -->
-    <section class="about" id="tentang">
-        <div class="container">
-            <div class="about-content">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23181425'/%3E%3Ccircle cx='100' cy='70' r='40' fill='%23ff77a8'/%3E%3Crect x='60' y='110' width='80' height='80' fill='%23ff77a8'/%3E%3Ccircle cx='80' cy='60' r='8' fill='%23ffffff'/%3E%3Ccircle cx='120' cy='60' r='8' fill='%23ffffff'/%3E%3Cpath d='M80,90 Q100,110 120,90' stroke='%23ffffff' stroke-width='4' fill='none'/%3E%3C/svg%3E" alt="Wildan Fauzy" class="about-img">
-                <div class="about-text">
-                    <h2>Tentang Penulis</h2>
-                    <p>Wildan Fauzy is an author from Indonesia. Write novels, short stories, essays. Pig pen and piglet book a collection of stories.</p>
-                    <p>Wildan was born in Cirebon, West Java, Indonesia, on March 26, 1996. Raised in a small village called Budur, about an hour's drive from the city of Cirebon.</p>
-                    <p>Wildan's writing journey began with short stories and essays, eventually leading to the publication of his first novel "Kandang Babi" in 2017, followed by a collection of short stories "Anak Babi" in 2019.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Footer -->
-    <footer id="kontak">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <a href="#">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23181425'/%3E%3Cpath d='M3,3 h10 v2 h-8 v2 h6 v2 h-6 v2 h8 v2 h-10 z' fill='%23ff77a8'/%3E%3C/svg%3E" alt="W" class="logo-img">
-                        <span>Wildan Fauzy</span>
-                    </a>
-                    <p>Penulis amatir dari Indonesia. Menulis novel, cerpen, dan esai tentang kehidupan dan pengalaman pribadi.</p>
-                </div>
-                
-                <div class="footer-links">
-                    <h3>Tautan</h3>
-                    <ul>
-                        <li><a href="#beranda">Beranda</a></li>
-                        <li><a href="#buku">Karya-karya</a></li>
-                        <li><a href="#tentang">Tentang Penulis</a></li>
-                        <li><a href="#kontak">Kontak</a></li>
-                    </ul>
-                </div>
-                
+            </section>
+
+            <!-- Bagian Tentang -->
+            <section id="tentang" class="pixel-border">
+                <h2>Tentang Penulis</h2>
+                <p>Wildan Fauzy adalah penulis dari Indonesia. Lahir di Cirebon...</p>
+            </section>
+
+            <!-- Sosial Media -->
+            <section id="kontak" class="pixel-border">
+                <h2>Hubungi Saya</h2>
                 <div class="social-links">
-                    <h3>Sosial Media</h3>
-                    <div class="social-icons">
-                        <a href="https://facebook.com/wilfauzy" class="social-icon" title="Facebook">
-                            F
-                        </a>
-                        <a href="https://instagram.com/wilfauzy" class="social-icon" title="Instagram">
-                            I
-                        </a>
-                        <a href="https://pinterest.com/wilfauzy" class="social-icon" title="Pinterest">
-                            P
-                        </a>
-                        <a href="https://www.goodreads.com/author/show/19306620.Wildan_Fauzy" class="social-icon" title="Goodreads">
-                            G
-                        </a>
-                    </div>
+                    <a href="https://facebook.com/wilfauzy" target="_blank">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://instagram.com/wilfauzy" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://goodreads.com/author/show/19306620.Wildan_Fauzy" target="_blank">
+                        <i class="fab fa-goodreads"></i>
+                    </a>
                 </div>
-            </div>
-            
-            <div class="copyright">
-                <p>&copy; 2025 Wildan Fauzy. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-    
+            </section>
+        </main>
+
+        <footer class="pixel-border">
+            <p>&copy; 2023 Wildan Fauzy - All rights reserved</p>
+        </footer>
+    </div>
+
     <script>
-        // Mobile Menu Toggle
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('nav ul').classList.toggle('show');
-        });
-        
-        // Search Functionality
-        document.querySelector('.search-bar button').addEventListener('click', function() {
-            const searchTerm = document.querySelector('.search-bar input').value.toLowerCase();
-            alert('Searching for: ' + searchTerm);
-            // Implement actual search functionality here
-        });
-        
-        // Random Pixel Elements
-        function createPixelElements() {
-            const heroSection = document.querySelector('.hero');
-            const booksSection = document.querySelector('.books');
-            
-            for (let i = 0; i < 10; i++) {
-                const pixel = document.createElement('div');
-                pixel.classList.add('pixel-element');
-                pixel.style.top = Math.random() * 100 + '%';
-                pixel.style.left = Math.random() * 100 + '%';
-                pixel.style.animationDelay = Math.random() * 5 + 's';
-                
-                if (i < 5) {
-                    heroSection.appendChild(pixel);
-                } else {
-                    booksSection.appendChild(pixel);
-                }
+        // Dark Mode Toggle
+        const toggle = document.createElement('div');
+        toggle.className = 'dark-mode-toggle';
+        toggle.innerHTML = '💡';
+        document.body.appendChild(toggle);
+
+        toggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            // Update CSS Variables for light mode
+            if(document.body.classList.contains('light-mode')) {
+                document.documentElement.style.setProperty('--bg', '#ffffff');
+                document.documentElement.style.setProperty('--text', '#000000');
+                document.documentElement.style.setProperty('--pixel', '#cccccc');
+            } else {
+                document.documentElement.style.setProperty('--bg', '#1a1a1a');
+                document.documentElement.style.setProperty('--text', '#00ff00');
+                document.documentElement.style.setProperty('--pixel', '#4a4a4a');
             }
-        }
-        
-        // Initialize
-        window.addEventListener('load', function() {
-            createPixelElements();
+        });
+
+        // Simple Search Function
+        document.addEventListener('keyup', (e) => {
+            if(e.target.matches('input[type="search"]')) {
+                const term = e.target.value.toLowerCase();
+                document.querySelectorAll('.book-card').forEach(book => {
+                    const text = book.textContent.toLowerCase();
+                    book.style.display = text.includes(term) ? 'block' : 'none';
+                });
+            }
         });
     </script>
 </body>
