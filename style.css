@@ -1,0 +1,56 @@
+/* General Styles */
+body {
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+}
+
+.retro-header, .retro-footer {
+  background-color: #ff0000;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+h1, h2, h3 {
+  font-family: 'Press Start 2P', cursive;
+  color: #fff;
+}
+
+a {
+  color: #ff0;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+  padding: 10px;
+  border: 2px solid #fff;
+}
+
+.book-card img {
+  max-width: 200px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.social-links img {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+}
+
+@media (max-width: 768px) {
+  .book-card {
+    flex-direction: column;
+  }
+}
