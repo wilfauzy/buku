@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Penulis amatir dari Indonesia. Menulis novel, cerpen, dan esai. Lahir di Cirebon, Jawa Barat, Indonesia.">
+    <meta name="description" content="Wildan Fauzy - Penulis amatir dari Indonesia. Menulis novel, cerpen, dan esai. Lahir di Cirebon, Jawa Barat, Indonesia.">
     <title>Wildan Fauzy - Penulis amatir</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&family=Courier+Prime&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&display=swap');
         
         :root {
-            --pink: #ffb6c1;
-            --mint: #98d8c8;
-            --baby-blue: #a6cced;
-            --light-yellow: #fff9c4;
-            --dark: #333;
+            --pixel-primary: #ff00ff;
+            --pixel-secondary: #00ffff;
+            --pixel-dark: #1a1a2e;
+            --pixel-light: #e6e6e6;
+            --pixel-accent: #ffff00;
         }
         
         * {
@@ -23,50 +24,56 @@
         }
         
         body {
-            font-family: 'Courier Prime', monospace;
-            background-color: var(--light-yellow);
-            color: var(--dark);
+            font-family: 'VT323', monospace;
+            background-color: var(--pixel-dark);
+            color: var(--pixel-light);
+            font-size: 18px;
             line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                linear-gradient(to right, rgba(26, 26, 46, 0.8) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(26, 26, 46, 0.8) 1px, transparent 1px);
+            background-size: 20px 20px;
         }
         
         .container {
-            width: 90%;
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
         
-        /* Header */
         header {
-            background-color: var(--pink);
-            padding: 1.5rem 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px 0;
             position: relative;
+            border-bottom: 4px solid var(--pixel-primary);
+            background-color: rgba(26, 26, 46, 0.9);
         }
         
         .logo {
-            font-family: 'Press Start 2P', cursive;
-            font-size: 1.2rem;
-            text-align: center;
-            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
         }
         
         .logo img {
-            height: 40px;
+            height: 60px;
             image-rendering: pixelated;
         }
         
-        .nav-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
+        .logo-text {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 24px;
+            color: var(--pixel-primary);
+            text-shadow: 3px 3px 0 var(--pixel-secondary);
+            margin-left: 10px;
         }
         
         nav ul {
-            list-style: none;
             display: flex;
             justify-content: center;
+            list-style: none;
             flex-wrap: wrap;
         }
         
@@ -75,190 +82,210 @@
         }
         
         nav ul li a {
-            color: var(--dark);
+            color: var(--pixel-light);
             text-decoration: none;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-size: 20px;
+            padding: 5px 10px;
             transition: all 0.3s ease;
-            font-family: 'VT323', monospace;
-            font-size: 1.2rem;
+            border: 2px solid transparent;
         }
         
         nav ul li a:hover {
-            color: white;
-            text-shadow: 2px 2px 0 var(--mint);
+            color: var(--pixel-accent);
+            border-bottom: 2px solid var(--pixel-accent);
+            transform: translateY(-2px);
         }
         
-        /* Hero Section */
         .hero {
             position: relative;
-            height: 50vh;
-            min-height: 400px;
+            height: 400px;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            background-color: var(--mint);
-            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-        }
-        
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: repeating-linear-gradient(
-                45deg,
-                transparent,
-                transparent 10px,
-                rgba(255, 255, 255, 0.1) 10px,
-                rgba(255, 255, 255, 0.1) 20px
-            );
+            background-color: rgba(26, 26, 46, 0.7);
+            margin: 20px 0;
+            border: 4px solid var(--pixel-secondary);
         }
         
         .hero-content {
-            position: relative;
-            z-index: 1;
-            padding: 2rem;
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 10px;
-            box-shadow: 5px 5px 0 var(--pink);
+            text-align: center;
+            z-index: 2;
+            padding: 30px;
+            background-color: rgba(26, 26, 46, 0.85);
+            border: 4px solid var(--pixel-primary);
             max-width: 800px;
         }
         
         .hero h1 {
             font-family: 'Press Start 2P', cursive;
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: var(--dark);
-            text-shadow: 3px 3px 0 var(--pink);
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: var(--pixel-primary);
+            text-shadow: 3px 3px 0 var(--pixel-secondary);
         }
         
         .hero p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
+            font-size: 22px;
+            margin-bottom: 30px;
         }
         
-        /* Books Section */
-        .books {
-            padding: 4rem 0;
-            background-color: var(--baby-blue);
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--pixel-primary);
+            color: var(--pixel-dark);
+            text-decoration: none;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 4px 4px 0 var(--pixel-secondary);
+            margin-top: 20px;
+        }
+        
+        .cta-button:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0 var(--pixel-secondary);
+        }
+        
+        .cta-button:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 var(--pixel-secondary);
+        }
+        
+        .book-section {
+            padding: 40px 0;
         }
         
         .section-title {
             font-family: 'Press Start 2P', cursive;
+            font-size: 28px;
+            color: var(--pixel-accent);
             text-align: center;
-            margin-bottom: 2rem;
-            font-size: 1.8rem;
-            color: var(--dark);
-            text-shadow: 2px 2px 0 var(--pink);
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 0 var(--pixel-primary);
+            position: relative;
         }
         
-        .books-grid {
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background-color: var(--pixel-primary);
+            margin: 20px auto;
+            box-shadow: 2px 2px 0 var(--pixel-secondary);
+        }
+        
+        .books {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            grid-gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
         
         .book-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 5px 5px 0 var(--pink);
-            transition: transform 0.3s ease;
-        }
-        
-        .book-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .book-cover {
-            width: 100%;
-            height: 300px;
-            background-color: var(--pink);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background-color: rgba(36, 36, 66, 0.7);
+            border: 4px solid var(--pixel-primary);
+            padding: 20px;
+            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
         
-        .book-cover img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: cover;
+        .book-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--pixel-accent);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
         
-        .book-info {
-            padding: 1.5rem;
+        .book-card::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--pixel-accent);
+            transform: rotate(45deg);
+            z-index: -1;
         }
         
         .book-title {
-            font-family: 'VT323', monospace;
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--dark);
-        }
-        
-        .book-meta {
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-            color: #666;
-        }
-        
-        .book-synopsis {
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .read-more {
-            display: inline-block;
-            padding: 8px 16px;
-            background-color: var(--mint);
-            color: var(--dark);
-            text-decoration: none;
-            border-radius: 5px;
             font-family: 'Press Start 2P', cursive;
-            font-size: 0.8rem;
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--pixel-secondary);
+        }
+        
+        .book-info {
+            margin-bottom: 15px;
+        }
+        
+        .book-info span {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--pixel-accent);
+        }
+        
+        .book-info span strong {
+            color: var(--pixel-light);
+        }
+        
+        .book-sinopsis {
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.5;
+            border-left: 4px solid var(--pixel-secondary);
+            padding-left: 10px;
+        }
+        
+        .book-link {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: var(--pixel-secondary);
+            color: var(--pixel-dark);
+            text-decoration: none;
+            font-family: 'VT323', monospace;
+            font-size: 18px;
             transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
+            box-shadow: 3px 3px 0 var(--pixel-primary);
         }
         
-        .read-more:hover {
-            background-color: var(--pink);
-            transform: translateY(-2px);
-            box-shadow: 2px 2px 0 var(--dark);
+        .book-link:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 5px 5px 0 var(--pixel-primary);
         }
         
-        /* About Section */
-        .about {
-            padding: 4rem 0;
-            background-color: var(--pink);
+        .about-section {
+            padding: 40px 0;
+            background-color: rgba(36, 36, 66, 0.5);
+            border-top: 4px solid var(--pixel-secondary);
+            border-bottom: 4px solid var(--pixel-secondary);
         }
         
         .about-content {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-            justify-content: center;
-            gap: 2rem;
+            gap: 30px;
         }
         
         .about-image {
             flex: 1;
             min-width: 300px;
-            max-width: 400px;
+            border: 4px solid var(--pixel-primary);
+            padding: 10px;
+            background-color: var(--pixel-dark);
+            text-align: center;
         }
         
         .about-image img {
             width: 100%;
-            border-radius: 10px;
-            box-shadow: 5px 5px 0 var(--mint);
+            height: auto;
+            max-width: 300px;
+            image-rendering: pixelated;
         }
         
         .about-text {
@@ -266,257 +293,349 @@
             min-width: 300px;
         }
         
-        .about-text h2 {
+        .about-text h3 {
             font-family: 'Press Start 2P', cursive;
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: var(--dark);
-            text-shadow: 2px 2px 0 var(--mint);
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--pixel-accent);
         }
         
-        /* Footer */
-        footer {
-            background-color: var(--mint);
-            padding: 2rem 0;
-            text-align: center;
+        .about-text p {
+            margin-bottom: 15px;
+            font-size: 20px;
+            line-height: 1.6;
         }
         
         .social-links {
             display: flex;
             justify-content: center;
-            margin-bottom: 1.5rem;
-            gap: 1.5rem;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
         }
         
         .social-link {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-color: var(--pixel-dark);
+            border: 3px solid var(--pixel-primary);
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: white;
-            border-radius: 50%;
-            color: var(--dark);
-            text-decoration: none;
             transition: all 0.3s ease;
-            box-shadow: 2px 2px 0 var(--pink);
+            position: relative;
+            overflow: hidden;
         }
         
         .social-link:hover {
-            transform: translateY(-3px);
-            background-color: var(--pink);
+            transform: translateY(-5px);
+            border-color: var(--pixel-accent);
         }
         
-        .footer-logo {
-            margin-bottom: 1rem;
-        }
-        
-        .footer-logo img {
+        .social-link img {
+            width: 30px;
             height: 30px;
             image-rendering: pixelated;
         }
         
-        .footer-text {
-            font-size: 0.9rem;
-            color: var(--dark);
+        .social-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: var(--pixel-primary);
+            top: 100%;
+            left: 0;
+            transition: all 0.3s ease;
+            opacity: 0.3;
         }
         
-        /* Responsive */
+        .social-link:hover::after {
+            top: 0;
+        }
+        
+        footer {
+            padding: 30px 0;
+            text-align: center;
+            background-color: var(--pixel-dark);
+            border-top: 4px solid var(--pixel-primary);
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo img {
+            height: 40px;
+            image-rendering: pixelated;
+        }
+        
+        .footer-links {
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: var(--pixel-light);
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--pixel-accent);
+        }
+        
+        .footer-copyright {
+            font-size: 16px;
+            color: var(--pixel-light);
+            opacity: 0.7;
+        }
+        
+        .pixel-cursor {
+            display: inline-block;
+            width: 10px;
+            height: 20px;
+            background-color: var(--pixel-primary);
+            animation: blink 1s infinite;
+            margin-left: 5px;
+            vertical-align: middle;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        /* Disco animations */
+        .disco-light {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.3;
+            background-image: radial-gradient(circle, var(--pixel-primary) 10%, transparent 10%),
+                            radial-gradient(circle, var(--pixel-secondary) 10%, transparent 10%);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+            animation: disco-move 8s linear infinite;
+        }
+        
+        @keyframes disco-move {
+            0% { background-position: 0 0, 15px 15px; }
+            100% { background-position: 300px 300px, 315px 315px; }
+        }
+        
+        .pixel-border {
+            position: relative;
+        }
+        
+        .pixel-border::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            background: linear-gradient(45deg, var(--pixel-primary), var(--pixel-secondary), var(--pixel-accent), var(--pixel-primary));
+            background-size: 400% 400%;
+            z-index: -1;
+            animation: pixel-border-anim 10s ease infinite;
+        }
+        
+        @keyframes pixel-border-anim {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Responsive design */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 1.5rem;
-            }
-            
-            .section-title {
-                font-size: 1.5rem;
-            }
-            
-            .book-title {
-                font-size: 1.3rem;
-            }
-            
-            .about-content {
-                flex-direction: column;
-            }
-            
-            .about-image {
-                margin-bottom: 1.5rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero {
-                min-height: 300px;
-            }
-            
-            .nav-container {
-                flex-direction: column;
-            }
-            
-            nav ul {
-                margin-top: 1rem;
+            .logo-text {
+                font-size: 18px;
             }
             
             nav ul li {
                 margin: 0 8px;
             }
             
-            .social-links {
-                flex-wrap: wrap;
+            nav ul li a {
+                font-size: 16px;
+            }
+            
+            .hero {
+                height: auto;
+                padding: 40px 0;
+            }
+            
+            .hero h1 {
+                font-size: 24px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .section-title {
+                font-size: 22px;
+            }
+            
+            .about-image, .about-text {
+                flex: 1 0 100%;
+            }
+            
+            .about-image {
+                text-align: center;
+            }
+            
+            .social-link {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .social-link img {
+                width: 25px;
+                height: 25px;
             }
         }
         
-        /* Pixel Art */
-        .pixel-art {
-            image-rendering: pixelated;
-            image-rendering: -moz-crisp-edges;
-            image-rendering: crisp-edges;
+        /* Glitch effect */
+        .glitch {
+            position: relative;
         }
         
-        /* Retro Deco */
-        .retro-dots {
-            background-image: radial-gradient(var(--pink) 1px, transparent 1px);
-            background-size: 10px 10px;
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
         }
         
-        .retro-lines {
-            background-image: repeating-linear-gradient(
-                to right,
-                var(--pink),
-                var(--pink) 1px,
-                transparent 1px,
-                transparent 10px
-            );
+        .glitch::before {
+            color: var(--pixel-primary);
+            animation: glitch-anim 2s infinite linear alternate-reverse;
+        }
+        
+        .glitch::after {
+            color: var(--pixel-secondary);
+            animation: glitch-anim2 3s infinite linear alternate-reverse;
+        }
+        
+        @keyframes glitch-anim {
+            0% { transform: translate(0); }
+            25% { transform: translate(-2px, 2px); }
+            50% { transform: translate(-2px, -2px); }
+            75% { transform: translate(2px, 2px); }
+            100% { transform: translate(2px, -2px); }
+        }
+        
+        @keyframes glitch-anim2 {
+            0% { transform: translate(0); }
+            25% { transform: translate(2px, -2px); }
+            50% { transform: translate(2px, 2px); }
+            75% { transform: translate(-2px, -2px); }
+            100% { transform: translate(-2px, 2px); }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="container">
             <div class="logo">
-                <div style="font-size: 24px; display: inline-block; color: #333; text-shadow: 2px 2px 0 #98d8c8;">WF</div>
+                <div class="logo-text">WF</div>
             </div>
-            <div class="nav-container">
-                <nav>
-                    <ul>
-                        <li><a href="#books">Buku</a></li>
-                        <li><a href="#about">Tentang</a></li>
-                        <li><a href="#contact">Kontak</a></li>
-                    </ul>
-                </nav>
-            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#books">Buku</a></li>
+                    <li><a href="#about">Tentang</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Wildan Fauzy</h1>
+    
+    <section id="home" class="hero">
+        <div class="disco-light"></div>
+        <div class="hero-content pixel-border">
+            <h1 class="glitch" data-text="Wildan Fauzy">Wildan Fauzy</h1>
             <p>Penulis amatir dari Indonesia. Menulis novel, cerpen, dan esai. Lahir di Cirebon, Jawa Barat, Indonesia.</p>
+            <a href="#books" class="cta-button">Lihat Karya</a>
         </div>
     </section>
-
-    <!-- Books Section -->
-    <section id="books" class="books">
+    
+    <section id="books" class="book-section">
         <div class="container">
-            <h2 class="section-title">KARYA</h2>
-            <div class="books-grid">
-                <!-- Book 1 -->
-                <div class="book-card">
-                    <div class="book-cover">
-                        <img src="/api/placeholder/300/400" alt="Kandang Babi">
-                    </div>
+            <h2 class="section-title">Karya Buku</h2>
+            <div class="books">
+                <div class="book-card animate__animated animate__fadeIn">
+                    <h3 class="book-title">Kandang Babi</h3>
                     <div class="book-info">
-                        <h3 class="book-title">Kandang Babi</h3>
-                        <div class="book-meta">
-                            Novel • 2017 • 192 halaman<br>
-                            ISBN: 9786024430986<br>
-                            Penerbit: Guepedia Publisher
-                        </div>
-                        <div class="book-synopsis">
-                            Kandang babi hanya julukan sebuah tempat tinggal, Benda mati dan juga tidak bernapas, tetapi mempunyai nama, perkenalkan namanya adalah "Kandang Babi", dia tidak ingin nama yang lain...
-                        </div>
-                        <a href="https://www.goodreads.com/book/show/52782048-kandang-babi" class="read-more" target="_blank">BACA REVIEW</a>
+                        <span><strong>Terbit:</strong> 2017</span>
+                        <span><strong>Penerbit:</strong> Guepedia Publisher</span>
+                        <span><strong>ISBN:</strong> 9786024430986</span>
+                        <span><strong>Halaman:</strong> 192</span>
                     </div>
+                    <div class="book-sinopsis">
+                        <p>Kandang babi hanya julukan sebuah tempat tinggal, Benda mati dan juga tidak bernapas, tetapi mempunyai nama, perkenalkan namanya adalah "Kandang Babi", dia tidak ingin nama yang lain, tidak ada yang tahu dari mana namanya berasal, dan juga tidak mempunyai silsilah keluarga, muncul dengan sendirinya, dan perlu diingat ini bukan kandang babi yang kalian kira.</p>
+                        <p>Dia tidak pernah mengeluh, andai saja dia tidak menjadi benda mati, masihkah tidak mengeluh, selain menjadi tempat berteduh dikala cuaca dingin maupun panas.</p>
+                    </div>
+                    <a href="https://www.goodreads.com/book/show/52782048-kandang-babi" class="book-link" target="_blank">Baca Review</a>
                 </div>
                 
-                <!-- Book 2 -->
-                <div class="book-card">
-                    <div class="book-cover">
-                        <img src="/api/placeholder/300/400" alt="Anak Babi">
-                    </div>
+                <div class="book-card animate__animated animate__fadeIn" style="animation-delay: 0.3s;">
+                    <h3 class="book-title">Anak Babi Sekumpulan Cerita</h3>
                     <div class="book-info">
-                        <h3 class="book-title">Anak Babi</h3>
-                        <div class="book-meta">
-                            Kumpulan Cerpen • 2019 • 90 halaman<br>
-                            ISBN: 9786237391449<br>
-                            Penerbit: Guepedia Publisher
-                        </div>
-                        <div class="book-synopsis">
-                            Anak babi sekumpulan cerita adalah kumpulan tulisan dari penulis sendiri yang masih berceceran, dikumpulkan tulisan tersebut menjadikan judul "Anak babi sekumpulan cerita"...
-                        </div>
-                        <a href="https://www.goodreads.com/book/show/49499989-anak-babi-sekumpulan-cerita" class="read-more" target="_blank">BACA REVIEW</a>
+                        <span><strong>Terbit:</strong> 2019</span>
+                        <span><strong>Penerbit:</strong> Guepedia Publisher</span>
+                        <span><strong>ISBN:</strong> 9786237391449</span>
+                        <span><strong>Halaman:</strong> 90</span>
                     </div>
+                    <div class="book-sinopsis">
+                        <p>Anak babi sekumpulan cerita adalah kumpulan tulisan dari penulis sendiri yang masih berceceran, dikumpulkan tulisan tersebut menjadikan judul "Anak babi sekumpulan cerita" merupakan catatan dari berbagai kisah pengalaman suka duka dan cinta dirangkum dalam buku ini.</p>
+                        <p>Buku ini dilahirkan dengan tujuan mengumpulkan tulisan dan menjadikan sebuah kumpulan cerita, cerita seorang lelaki yang merasakan jatuh cinta secara tiba-tiba dengan wanita yang dilihatnya secara samar-samar, atau cerita tentang pengalaman pertama kali terjerumus dalam dunia literasi yang membuat candu, semua dikemas dalam buku ini.</p>
+                    </div>
+                    <a href="https://www.goodreads.com/book/show/49499989-anak-babi-sekumpulan-cerita" class="book-link" target="_blank">Baca Review</a>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
+    
+    <section id="about" class="about-section">
         <div class="container">
-            <h2 class="section-title">TENTANG PENULIS</h2>
+            <h2 class="section-title">Tentang Penulis</h2>
             <div class="about-content">
                 <div class="about-image">
-                    <img src="/api/placeholder/400/400" alt="Wildan Fauzy">
+                    <img src="/api/placeholder/300/300" alt="Wildan Fauzy">
                 </div>
                 <div class="about-text">
+                    <h3>Wildan Fauzy</h3>
                     <p>Wildan Fauzy adalah seorang penulis dari Indonesia. Menulis novel, cerita pendek, esai. kandang babi dan anak babi merupakan kumpulan cerita.</p>
                     <p>Wildan lahir di Cirebon, Jawa Barat, Indonesia, pada tanggal 26 Maret 1996. Dibesarkan di sebuah desa kecil, sekitar satu jam perjalanan dari kota Cirebon.</p>
                     <p>Perjalanan menulis Wildan dimulai dengan cerita pendek dan esai, yang akhirnya membuahkan hasil berupa penerbitan novel pertamanya "Kandang Babi" pada tahun 2017, diikuti oleh kumpulan cerita pendek "Anak Babi" pada tahun 2019.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-logo">
-                <div style="font-size: 20px; display: inline-block; color: #333; text-shadow: 2px 2px 0 #ffb6c1;">WF</div>
-            </div>
-            <div class="social-links">
-                <a href="https://facebook.com/wilfauzy" class="social-link" target="_blank" title="Facebook">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
-                    </svg>
-                </a>
-                <a href="https://instagram.com/wilfauzy" class="social-link" target="_blank" title="Instagram">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
-                    </svg>
-                </a>
-                <a href="https://pinterest.com/wilfauzy" class="social-link" target="_blank" title="Pinterest">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="M8 0a8 8 0 0 0-2.915 15.452c-.07-.633-.134-1.606.027-2.297.146-.625.938-3.977.938-3.977s-.239-.479-.239-1.187c0-1.113.645-1.943 1.448-1.943.682 0 1.012.512 1.012 1.127 0 .686-.437 1.712-.663 2.663-.188.796.4 1.446 1.185 1.446 1.422 0 2.515-1.5 2.515-3.664 0-1.915-1.377-3.254-3.342-3.254-2.276 0-3.612 1.707-3.612 3.471 0 .688.265 1.425.595 1.826a.24.24 0 0 1 .056.23c-.061.252-.196.796-.222.907-.035.146-.116.177-.268.107-1-.465-1.624-1.926-1.624-3.1 0-2.523 1.834-4.84 5.286-4.84 2.775 0 4.932 1.977 4.932 4.62 0 2.757-1.739 4.976-4.151 4.976-.811 0-1.573-.421-1.834-.919l-.498 1.902c-.181.695-.669 1.566-.995 2.097A8 8 0 1 0 8 0z"/>
-                    </svg>
-                </a>
-                <a href="https://www.goodreads.com/author/show/19306620.Wildan_Fauzy" class="social-link" target="_blank" title="Goodreads">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M19.525 15.977V.49h-2.059v2.906h-.064c-.211-.455-.481-.891-.842-1.307-.36-.412-.767-.777-1.232-1.094-.466-.314-.962-.561-1.519-.736C13.256.09 12.669 0 12.038 0c-1.21 0-2.3.225-3.246.67-.947.447-1.743 1.057-2.385 1.83-.642.773-1.133 1.676-1.47 2.711-.336 1.037-.506 2.129-.506 3.283 0 1.199.141 2.326.425 3.382.286 1.057.737 1.976 1.368 2.762.631.785 1.412 1.396 2.375 1.833.961.436 2.119.661 3.471.661 1.248 0 2.33-.315 3.262-.946s1.638-1.473 2.119-2.525h.061v2.284c0 2.044-.421 3.607-1.264 4.705-.84 1.081-2.224 1.638-4.146 1.638-.572 0-1.128-.061-1.669-.181-.542-.12-1.036-.315-1.487-.57-.437-.271-.827-.601-1.143-1.038-.316-.435-.526-.961-.632-1.593H5.064c.067.887.315 1.654.737 2.3.424.646.961 1.172 1.602 1.593.641.406 1.367.706 2.172.902.811.194 1.639.3 2.494.3 1.383 0 2.541-.195 3.486-.555.947-.376 1.714-.902 2.301-1.608.601-.708 1.021-1.549 1.293-2.556.27-1.007.42-2.134.42-3.367l-.044.062zm-7.484-.557c-.955 0-1.784-.189-2.479-.571-.697-.38-1.277-.882-1.732-1.503-.467-.621-.797-1.332-1.022-2.139s-.332-1.633-.332-2.484c0-.871.105-1.71.332-2.529.227-.82.57-1.538 1.037-2.155.466-.631 1.047-1.123 1.732-1.503.695-.379 1.524-.571 2.479-.571.955 0 1.784.189 2.479.571.696.38 1.277.882 1.731 1.503.467.631.799 1.349 1.023 2.155.226.82.332 1.659.332 2.529 0 .852-.106 1.676-.332 2.484-.226.807-.557 1.518-1.023 2.139-.454.621-1.035 1.123-1.731 1.503-.695.382-1.524.571-2.479.571zm12.24-11.977h-2.076v13.069h2.076V3.443zm.779 18.329c0-.473-.162-.873-.486-1.196-.323-.323-.721-.484-1.191-.484-.484 0-.891.161-1.214.484-.325.323-.486.723-.486 1.196 0 .479.162.875.486 1.202.323.331.73.484 1.214.484.471 0 .868-.153 1.191-.484.323-.327.486-.723.486-1.202z"/>
-                    </svg>
-                </a>
-                <a href="https://wilfauzy.medium.com" class="social-link" target="_blank" title="Medium">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="M9.025 8c0 2.485-2.02 4.5-4.513 4.5A4.506 4.506 0 0 1 0 8c0-2.486 2.02-4.5 4.512-4.5A4.506 4.506 0 0 1 9.025 8zm4.95 0c0 2.34-1.01 4.236-2.256 4.236-1.246 0-2.256-1.897-2.256-4.236 0-2.34 1.01-4.236 2.256-4.236 1.246 0 2.256 1.897 2.256 4.236zM16 8c0 2.096-.355 3.795-.794 3.795-.438 0-.793-1.7-.793-3.795 0-2.096.355-3.795.794-3.795.438 0 .793 1.699.793 3.795z"/>
-                    </svg>
-                </a>
-                <a href="mailto:wildan@fauzy.eu.org" class="social-link" target="_blank" title="Email">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
-                    </svg>
-                </a>
-            </div>
-            <div class="footer-text">
-                <p>&copy; 2025 Wildan Fauzy. All
+                    <div class="social-links">
+                        <a href="https://facebook.com/wilfauzy" class="social-link" target="_blank">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMGZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1mYWNlYm9vayI+PHBhdGggZD0iTTE4IDJoLTMuMUE1LjkgNS45IDAgMCA0IDkgNy45VjEwSDZWMTNoM3Y5aDRWMTNoM2wxLTNoLTRWOGE0IDQgMCAwIDEgNC00aC4xeiI+PC9wYXRoPjwvc3ZnPg==" alt="Facebook">
+                        </a>
+                        <a href="https://instagram.com/wilfauzy" class="social-link" target="_blank">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZjAwZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1pbnN0YWdyYW0iPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgeD0iMiIgeT0iMiIgcng9IjUiIHJ5PSI1Ij48L3JlY3Q+PHBhdGggZD0iTTE2IDExLjM3QTQgNCAwIDEgMSAxMi42MyA4IDE0IDQgMCAwIDEgMTYgMTEuMzd6Ij48L3BhdGg+PGxpbmUgeDE9IjE3LjUiIHgyPSIxNy41MSIgeTE9IjYuNSIgeTI9IjYuNSI+PC9saW5lPjwvc3ZnPg==" alt="Instagram">
+                        </a>
+                        <a href="https://pinterest.com/wilfauzy" class="social-link" target="_blank">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmMDAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1waW50ZXJlc3QiPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjEwIj48L2NpcmNsZT48cGF0aCBkPSJtOCA4YTQuNSA0LjUgMCAwIDEgNy41LTIiPjwvcGF0aD48cGF0aCBkPSJNMTIgOWE0IDQgMCAwIDAgMyA2Ij48L3BhdGg+PHBhdGggZD0ibTkgMTg5IDE0LTgiPjwvcGF0aD48L3N2Zz4=" alt="Pinterest">
+                        </a>
+                        <a href="https://www.goodreads.com/author/show/19306620.Wildan_Fauzy" class="social-link" target="_blank">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMGZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1ib29rLW9wZW4iPjxwYXRoIGQ9Ik0yIDMuOEE0IDQgMCAwIDEgNS41IDJIODEyYzQuNiAwIDcuOTkgMi42NCA5LjUgNi4wNSAxLjUxIDMuNCAxLjE2IDcuMCAwIDEwLjVBNCAzIDAgMCAxIDE2LjV2MkgxMWE0IDQgMCAwIDEgMCAwSDUuNSA0IDAgMCAxLTMuNS0zLjg1eiI+PC9wYXRoPjxwYXRoIGQ9Ik0xMiAydjIwIj48L3BhdGg
