@@ -1,891 +1,831 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wildan Fauzy - Penulis amatir</title>
-    <meta name="description" content="Wildan Fauzy is an author from Indonesia. Write novels, short stories, essays. Pig pen and piglet book a collection of stories. Wildan was born in Cirebon, West Java, Indonesia, on March 26, 1996. Raised in a small village called Budur, about an hour's drive from the city of Cirebon.">
-    <meta name="keywords" content="Wildan Fauzy, penulis, novel, cerpen, kandang babi, anak babi, penulis Indonesia">
-    <meta name="author" content="Wildan Fauzy">
-    <meta property="og:title" content="Wildan Fauzy - Penulis amatir">
-    <meta property="og:description" content="Wildan Fauzy is an author from Indonesia. Write novels, short stories, essays.">
-    <meta property="og:url" content="https://wildan.fauzy.eu.org">
+    <title>Pixel Blog - Retro Style Writing</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="A retro pixel-themed blog with original content and pixel art aesthetics">
+    <meta name="keywords" content="pixel art, retro blog, pixel blog, retro gaming, nostalgia">
+    <meta name="author" content="Your Name">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Pixel Blog - Retro Style Writing">
+    <meta property="og:description" content="A retro pixel-themed blog with original content and pixel art aesthetics">
+    <meta property="og:image" content="/api/placeholder/1200/630">
+    <meta property="og:url" content="https://pixelblog.example.com">
     <meta property="og:type" content="website">
-    <link rel="canonical" href="https://wildan.fauzy.eu.org">
     
     <style>
-        /* Pixel Font */
+        /* Global Styles and Variables */
+        :root {
+            --pixel-size: 2px;
+            --primary: #5df249;
+            --secondary: #49c2f2;
+            --dark: #2d3a4f;
+            --light: #f0f6fc;
+            --accent: #f249b8;
+            --font-pixel: 'Courier New', monospace;
+        }
+        
+        /* Custom Pixel Font */
         @font-face {
             font-family: 'PixelFont';
-            src: url('https://cdnjs.cloudflare.com/ajax/libs/VT323/1.0.0/VT323-Regular.ttf') format('truetype');
+            src: url('https://cdnjs.cloudflare.com/ajax/libs/PixelEmulator/1.0/PixelEmulator.ttf') format('truetype');
             font-display: swap;
         }
         
-        /* Reset and Base Styles */
+        /* Reset & Base Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            image-rendering: pixelated;
         }
         
         body {
-            font-family: 'PixelFont', monospace;
-            background-color: #0f0f1b;
-            color: #f8f8f8;
+            font-family: var(--font-pixel);
+            background-color: var(--dark);
+            color: var(--light);
             line-height: 1.6;
+            font-size: 16px;
             background-image: 
-                linear-gradient(to right, rgba(15, 15, 27, 0.9) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(15, 15, 27, 0.9) 1px, transparent 1px);
-            background-size: 16px 16px;
-            overflow-x: hidden;
+                linear-gradient(0deg, rgba(0,0,0,0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            image-rendering: pixelated;
         }
         
-        /* Pixelated Container */
-        .pixel-container {
+        .pixel-border {
+            position: relative;
+            border: var(--pixel-size) solid var(--light);
+            box-shadow: 
+                var(--pixel-size) var(--pixel-size) 0 0 var(--primary),
+                calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 0 var(--secondary);
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        /* Animation for Pixel Elements */
+        @keyframes pixel-float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0); }
+        }
+        
+        /* Container */
+        .container {
+            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
-            border: 4px solid #39ff14;
-            border-top: none;
-            border-bottom: none;
-            background: rgba(15, 15, 27, 0.8);
-            box-shadow: 0 0 20px rgba(57, 255, 20, 0.3);
+            padding: 20px 0;
         }
         
-        /* Header */
+        /* Header and Navigation */
         header {
             padding: 20px 0;
-            text-align: center;
-            border-bottom: 4px solid #39ff14;
-            position: relative;
         }
         
-        .logo {
+        .site-logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .logo-pixel {
+            font-family: 'PixelFont', var(--font-pixel);
             font-size: 40px;
-            color: #39ff14;
+            color: var(--primary);
             text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 3px 3px 0 #ff00ff;
-            animation: glitch 2.5s infinite;
-            margin-bottom: 10px;
+            letter-spacing: 3px;
+            text-shadow: 
+                3px 3px 0 var(--secondary),
+                6px 6px 0 rgba(0,0,0,0.2);
+            animation: pixel-float 3s ease-in-out infinite;
         }
         
-        .logo::before {
-            content: "WF";
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            top: 22px;
-            color: #ff00ff;
-            z-index: -1;
-            filter: blur(1px);
-            opacity: 0.8;
-        }
-        
-        nav ul {
+        nav {
             display: flex;
             justify-content: center;
-            list-style: none;
             flex-wrap: wrap;
+            margin-bottom: 30px;
         }
         
-        nav ul li {
-            margin: 0 15px;
-        }
-        
-        nav ul li a {
-            color: #f8f8f8;
+        nav a {
+            color: var(--light);
             text-decoration: none;
-            font-size: 20px;
+            padding: 8px 15px;
+            margin: 0 5px 10px;
+            font-weight: bold;
+            background-color: var(--dark);
+            border: 2px solid var(--primary);
+            box-shadow: 3px 3px 0 var(--secondary);
+            transition: all 0.2s ease;
+        }
+        
+        nav a:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 5px 5px 0 var(--secondary);
+            background-color: var(--primary);
+            color: var(--dark);
+        }
+        
+        /* Cover Section */
+        .cover {
             position: relative;
-            transition: all 0.3s ease;
-        }
-        
-        nav ul li a:hover {
-            color: #39ff14;
-            text-shadow: 0 0 8px #39ff14;
-        }
-        
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            width: 0%;
-            height: 2px;
-            bottom: -2px;
-            left: 0;
-            background-color: #39ff14;
-            transition: width 0.3s ease;
-        }
-        
-        nav ul li a:hover::after {
-            width: 100%;
-        }
-        
-        /* Hero Section */
-        .hero {
-            padding: 60px 0;
-            text-align: center;
-            background: url('https://cdnjs.cloudflare.com/ajax/libs/pixel-borders/1.1.4/pixel-borders.min.css');
-            background-size: cover;
-            position: relative;
-            overflow: hidden;
-            border-bottom: 4px solid #39ff14;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, #0f0f1b 25%, transparent 25%, transparent 50%, #0f0f1b 50%, #0f0f1b 75%, transparent 75%, transparent);
-            background-size: 4px 4px;
-            opacity: 0.1;
-            animation: heroBg 30s linear infinite;
-        }
-        
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            color: #ff00ff;
-            text-shadow: 4px 4px 0 #39ff14;
-            animation: float 3s ease-in-out infinite;
-        }
-        
-        .hero p {
-            font-size: 20px;
-            max-width: 800px;
-            margin: 0 auto 30px;
-            padding: 0 20px;
-            color: #dddddd;
-        }
-        
-        /* Books Section */
-        .books {
-            padding: 60px 0;
-            border-bottom: 4px solid #39ff14;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 36px;
+            height: 400px;
             margin-bottom: 40px;
-            color: #39ff14;
-            text-shadow: 3px 3px 0 #ff00ff;
-        }
-        
-        .book-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 40px;
-        }
-        
-        .book-card {
-            width: 300px;
-            border: 4px solid #39ff14;
-            background-color: rgba(10, 10, 18, 0.8);
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s ease;
-            position: relative;
             overflow: hidden;
+            background-color: var(--dark);
         }
         
-        .book-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
+        .cover img {
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(57, 255, 20, 0.1) 0%, rgba(255, 0, 255, 0.1) 100%);
-            pointer-events: none;
+            object-fit: cover;
+            object-position: center;
+            filter: brightness(0.7) contrast(1.2);
+            image-rendering: pixelated;
         }
         
-        .book-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(57, 255, 20, 0.3);
-        }
-        
-        .book-cover {
-            width: 100%;
-            height: 300px;
-            background-color: #2a2a3a;
-            margin-bottom: 20px;
-            position: relative;
-            overflow: hidden;
-            border: 2px solid #39ff14;
-        }
-        
-        .book-cover::before {
-            content: attr(data-title);
+        .cover-text {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 24px;
-            color: #fff;
             text-align: center;
+            width: 80%;
             padding: 20px;
-            text-shadow: 2px 2px 0 #ff00ff;
+            background-color: rgba(45, 58, 79, 0.8);
+            border: var(--pixel-size) solid var(--primary);
         }
         
-        .book-card h3 {
-            font-size: 24px;
-            margin-bottom: 10px;
-            color: #ff00ff;
-        }
-        
-        .book-card .year {
-            font-size: 16px;
-            color: #39ff14;
+        .cover-text h1 {
+            font-family: 'PixelFont', var(--font-pixel);
+            font-size: 36px;
+            color: var(--primary);
             margin-bottom: 15px;
+            text-shadow: 3px 3px 0 var(--secondary);
         }
         
-        .book-details {
-            font-size: 14px;
-            margin-bottom: 15px;
-            color: #bbbbbb;
-            text-align: left;
-        }
-        
-        .book-details p {
-            margin-bottom: 5px;
-        }
-        
-        .book-synopsis {
-            font-size: 16px;
-            margin-bottom: 20px;
-            text-align: left;
-            height: 100px;
-            overflow: hidden;
-            position: relative;
-            color: #dddddd;
-        }
-        
-        .book-synopsis::after {
-            content: "...";
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            background-color: rgba(10, 10, 18, 0.8);
-            padding-left: 5px;
-        }
-        
-        .read-more-btn {
-            display: inline-block;
-            padding: 8px 20px;
-            background-color: #39ff14;
-            color: #0f0f1b;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-            font-family: 'PixelFont', monospace;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .read-more-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.6), transparent);
-            transition: left 0.5s ease;
-        }
-        
-        .read-more-btn:hover::before {
-            left: 100%;
-        }
-        
-        .read-more-btn:hover {
-            background-color: #ff00ff;
-            box-shadow: 0 0 10px #ff00ff;
-        }
-        
-        /* About Section */
-        .about {
-            padding: 60px 0;
-            border-bottom: 4px solid #39ff14;
-        }
-        
-        .about-content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 40px;
-        }
-        
-        .about-image {
-            width: 300px;
-            height: 300px;
-            background-color: #2a2a3a;
-            border: 4px solid #39ff14;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .about-image::before {
-            content: "WF";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 120px;
-            color: #39ff14;
-            opacity: 0.2;
-        }
-        
-        .pixel-author {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .pixel-head {
-            width: 80px;
-            height: 80px;
-            background-color: #f8d8b8;
-            border: 4px solid #000;
-            position: relative;
-            margin-bottom: 10px;
-        }
-        
-        .pixel-eye {
-            width: 10px;
-            height: 10px;
-            background-color: #000;
-            position: absolute;
-            top: 30px;
-        }
-        
-        .pixel-eye.left {
-            left: 20px;
-        }
-        
-        .pixel-eye.right {
-            right: 20px;
-        }
-        
-        .pixel-mouth {
-            width: 30px;
-            height: 6px;
-            background-color: #000;
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .pixel-body {
-            width: 100px;
-            height: 120px;
-            background-color: #39ff14;
-            border: 4px solid #000;
-            position: relative;
-        }
-        
-        .pixel-arm {
-            width: 20px;
-            height: 80px;
-            background-color: #f8d8b8;
-            border: 4px solid #000;
-            position: absolute;
-            top: 10px;
-        }
-        
-        .pixel-arm.left {
-            left: -24px;
-            transform: rotate(15deg);
-        }
-        
-        .pixel-arm.right {
-            right: -24px;
-            transform: rotate(-15deg);
-        }
-        
-        .about-text {
-            max-width: 600px;
-            padding: 20px;
-            border: 4px solid #39ff14;
-            background-color: rgba(10, 10, 18, 0.8);
-        }
-        
-        .about-text p {
-            margin-bottom: 15px;
+        .cover-text p {
             font-size: 18px;
-            color: #dddddd;
+            color: var(--light);
+        }
+        
+        /* Main Content Area */
+        .content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        main {
+            flex: 1 1 65%;
+            min-width: 300px;
+        }
+        
+        /* Blog Post Styles */
+        .post {
+            margin-bottom: 50px;
+        }
+        
+        .post-header {
+            margin-bottom: 20px;
+        }
+        
+        .post-title {
+            font-family: 'PixelFont', var(--font-pixel);
+            font-size: 28px;
+            color: var(--primary);
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 0 var(--secondary);
+        }
+        
+        .post-meta {
+            font-size: 14px;
+            color: var(--secondary);
+        }
+        
+        .post-content {
+            background-color: rgba(240, 246, 252, 0.05);
+            padding: 20px;
+            border: var(--pixel-size) solid var(--light);
+            box-shadow: 
+                var(--pixel-size) var(--pixel-size) 0 0 var(--primary),
+                calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 0 var(--secondary);
+        }
+        
+        .post-content p {
+            margin-bottom: 20px;
+        }
+        
+        .post-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            image-rendering: pixelated;
+        }
+        
+        .read-more {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: var(--primary);
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            border: 2px solid var(--dark);
+            box-shadow: 3px 3px 0 var(--secondary);
+            transition: all 0.2s ease;
+        }
+        
+        .read-more:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 5px 5px 0 var(--secondary);
+        }
+        
+        /* Sidebar */
+        aside {
+            flex: 1 1 25%;
+            min-width: 250px;
+        }
+        
+        .sidebar-widget {
+            margin-bottom: 40px;
+        }
+        
+        .widget-title {
+            font-family: 'PixelFont', var(--font-pixel);
+            font-size: 22px;
+            color: var(--primary);
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 0 var(--secondary);
+            padding-bottom: 5px;
+            border-bottom: 3px dashed var(--primary);
+        }
+        
+        .sidebar-content {
+            padding: 15px;
+            background-color: rgba(240, 246, 252, 0.05);
+            border: var(--pixel-size) solid var(--light);
+        }
+        
+        .categories li {
+            list-style-type: none;
+            margin-bottom: 10px;
+            padding-left: 15px;
+            position: relative;
+        }
+        
+        .categories li::before {
+            content: "►";
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+        }
+        
+        .categories a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        
+        .categories a:hover {
+            color: var(--primary);
+        }
+        
+        .recent-posts li {
+            margin-bottom: 15px;
+            list-style-type: none;
+            border-bottom: 1px dashed var(--secondary);
+            padding-bottom: 10px;
+        }
+        
+        .recent-posts a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s ease;
+        }
+        
+        .recent-posts a:hover {
+            color: var(--primary);
+        }
+        
+        .recent-posts .post-date {
+            font-size: 12px;
+            color: var(--secondary);
+            display: block;
+            margin-top: 5px;
         }
         
         /* Footer */
         footer {
-            padding: 40px 0;
-            text-align: center;
+            margin-top: 50px;
+            padding: 30px 0;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-top: var(--pixel-size) solid var(--primary);
         }
         
-        .social-links {
-            margin-bottom: 30px;
+        .footer-content {
             display: flex;
-            justify-content: center;
             flex-wrap: wrap;
-            gap: 20px;
+            justify-content: space-between;
+            gap: 30px;
         }
         
-        .social-link {
+        .footer-section {
+            flex: 1 1 30%;
+            min-width: 250px;
+        }
+        
+        .footer-logo {
+            font-family: 'PixelFont', var(--font-pixel);
+            font-size: 24px;
+            color: var(--primary);
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 0 var(--secondary);
+        }
+        
+        .social-icons {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            background-color: rgba(10, 10, 18, 0.8);
-            border: 3px solid #39ff14;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            gap: 15px;
+            margin-top: 20px;
         }
         
-        .social-link::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to right, transparent, rgba(57, 255, 20, 0.3), transparent);
-            transition: left 0.5s ease;
-        }
-        
-        .social-link:hover::before {
-            left: 100%;
-        }
-        
-        .social-link:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(57, 255, 20, 0.5);
-        }
-        
-        .pixel-icon {
-            width: 24px;
-            height: 24px;
-            display: block;
-        }
-        
-        .facebook-icon {
-            background-color: #39ff14;
-            clip-path: polygon(
-                0% 20%, 100% 20%, 100% 80%, 60% 80%, 60% 100%, 40% 100%, 40% 80%, 0% 80%
-            );
-        }
-        
-        .instagram-icon {
-            background-color: #39ff14;
-            border: 3px solid #39ff14;
-            border-radius: 8px;
-            position: relative;
-        }
-        
-        .instagram-icon::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 10px;
-            height: 10px;
-            border: 2px solid transparent;
-            border-radius: 50%;
-            background-color: transparent;
-            box-shadow: 0 0 0 2px #0f0f1b;
-        }
-        
-        .instagram-icon::after {
-            content: '';
-            position: absolute;
-            top: 4px;
-            right: 4px;
-            width: 4px;
-            height: 4px;
-            border-radius: 50%;
-            background-color: #0f0f1b;
-        }
-        
-        .pinterest-icon {
-            background-color: #39ff14;
-            border-radius: 50%;
-            position: relative;
-        }
-        
-        .pinterest-icon::after {
-            content: '';
-            position: absolute;
-            bottom: 6px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 10px;
-            height: 14px;
-            background-color: #0f0f1b;
-            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-        }
-        
-        .goodreads-icon {
-            background-color: #39ff14;
-            border-radius: 5px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .goodreads-icon::before {
-            content: 'g';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-family: 'PixelFont', monospace;
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: var(--dark);
+            border: 2px solid var(--primary);
+            color: var(--light);
+            text-align: center;
+            line-height: 36px;
             font-size: 20px;
-            color: #0f0f1b;
-            font-weight: bold;
+            box-shadow: 2px 2px 0 var(--secondary);
+            transition: all 0.2s ease;
+        }
+        
+        .social-icons a:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 4px 4px 0 var(--secondary);
+            background-color: var(--primary);
+            color: var(--dark);
+        }
+        
+        .footer-links li {
+            list-style-type: none;
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
         }
         
         .copyright {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px dashed var(--secondary);
+            font-size: 14px;
+        }
+        
+        /* New Post Form */
+        .post-form {
+            margin-bottom: 50px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            background-color: var(--dark);
+            border: 2px solid var(--light);
+            color: var(--light);
+            font-family: var(--font-pixel);
             font-size: 16px;
-            color: #888888;
         }
         
-        /* Animations */
-        @keyframes glitch {
-            0% {
-                text-shadow: 3px 3px 0 #ff00ff;
-            }
-            2% {
-                text-shadow: -3px -3px 0 #ff00ff;
-            }
-            4% {
-                text-shadow: 3px 3px 0 #ff00ff;
-            }
-            6% {
-                text-shadow: -3px -3px 0 #ff00ff;
-            }
-            8% {
-                text-shadow: 3px 3px 0 #ff00ff;
-            }
-            10% {
-                text-shadow: -3px -3px 0 #ff00ff;
-            }
-            12% {
-                text-shadow: 3px 3px 0 #ff00ff;
-            }
-            14% {
-                text-shadow: -3px -3px 0 #ff00ff;
-            }
-            16% {
-                text-shadow: 3px 3px 0 #ff00ff;
-            }
-            18% {
-                text-shadow: -3px -3px 0 #ff00ff;
-            }
-            20% {
-                text-shadow: 3px 3px 0 #ff00ff;
-            }
-            100% {
-                text-shadow: 3px 3px 0 #ff00ff;
-            }
+        .form-group textarea {
+            min-height: 200px;
+            resize: vertical;
         }
         
-        @keyframes float {
-            0% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-            100% {
-                transform: translateY(0);
-            }
+        .form-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary);
+            color: var(--dark);
+            border: none;
+            font-family: var(--font-pixel);
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 3px 3px 0 var(--secondary);
+            transition: all 0.2s ease;
+            border: 2px solid var(--dark);
         }
         
-        @keyframes heroBg {
-            0% {
-                background-position: 0 0;
-            }
-            100% {
-                background-position: 100px 100px;
-            }
+        .form-button:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 5px 5px 0 var(--secondary);
         }
         
-        /* Floating Pixels */
-        .floating-pixel {
-            position: fixed;
-            width: 5px;
-            height: 5px;
-            background-color: #39ff14;
-            animation: floatPixel 15s linear infinite;
-            z-index: -1;
-        }
-        
-        @keyframes floatPixel {
-            0% {
-                transform: translate(0, 0);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translate(100px, -100px);
-                opacity: 0;
-            }
-        }
-        
-        /* Mobile Responsive */
+        /* Mobile Responsive Styles */
         @media (max-width: 768px) {
-            .logo {
-                font-size: 30px;
+            .logo-pixel {
+                font-size: 32px;
             }
             
-            .hero h1 {
-                font-size: 36px;
+            nav a {
+                margin-bottom: 10px;
             }
             
-            .hero p {
-                font-size: 18px;
+            .cover {
+                height: 300px;
             }
             
-            .section-title {
-                font-size: 30px;
+            .cover-text h1 {
+                font-size: 28px;
             }
             
-            .about-image {
-                width: 250px;
-                height: 250px;
-            }
-            
-            .book-card {
-                width: 100%;
-                max-width: 300px;
-            }
-            
-            nav ul li {
-                margin: 0 10px;
-            }
-            
-            nav ul li a {
+            .cover-text p {
                 font-size: 16px;
+            }
+            
+            .post-title {
+                font-size: 24px;
+            }
+            
+            .content-wrapper {
+                flex-direction: column;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .footer-section {
+                padding-bottom: 20px;
+                border-bottom: 1px dashed var(--secondary);
+            }
+            
+            .footer-section:last-child {
+                border-bottom: none;
             }
         }
         
         @media (max-width: 480px) {
-            .logo {
-                font-size: 24px;
-            }
-            
-            .hero h1 {
+            .logo-pixel {
                 font-size: 28px;
             }
             
-            .hero p {
-                font-size: 16px;
+            .cover {
+                height: 250px;
             }
             
-            .section-title {
+            .cover-text h1 {
                 font-size: 24px;
             }
             
-            .about-image {
-                width: 200px;
-                height: 200px;
+            .cover-text p {
+                font-size: 14px;
             }
             
-            nav ul {
-                flex-direction: column;
-                gap: 10px;
+            .post-title {
+                font-size: 22px;
             }
             
-            .pixel-container {
-                padding: 0 10px;
+            .container {
+                width: 95%;
             }
+        }
+        
+        /* Pixel art social media icons */
+        .pixel-icon {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-color: var(--light);
+            position: relative;
+            image-rendering: pixelated;
+        }
+        
+        /* Twitter/X pixel icon */
+        .pixel-icon.twitter::before {
+            content: "";
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background-color: var(--dark);
+            box-shadow: 
+                4px 0 0 var(--dark),
+                8px 0 0 var(--dark),
+                12px 0 0 var(--dark),
+                16px 0 0 var(--dark),
+                20px 0 0 var(--dark),
+                0 4px 0 var(--dark),
+                8px 4px 0 var(--dark),
+                12px 4px 0 var(--dark),
+                20px 4px 0 var(--dark),
+                0 8px 0 var(--dark),
+                4px 8px 0 var(--dark),
+                8px 8px 0 var(--dark),
+                16px 8px 0 var(--dark),
+                20px 8px 0 var(--dark),
+                0 12px 0 var(--dark),
+                8px 12px 0 var(--dark),
+                16px 12px 0 var(--dark),
+                20px 12px 0 var(--dark),
+                0 16px 0 var(--dark),
+                4px 16px 0 var(--dark),
+                8px 16px 0 var(--dark),
+                12px 16px 0 var(--dark),
+                16px 16px 0 var(--dark),
+                20px 16px 0 var(--dark),
+                0 20px 0 var(--dark),
+                20px 20px 0 var(--dark);
+        }
+        
+        /* Facebook pixel icon */
+        .pixel-icon.facebook::before {
+            content: "";
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background-color: var(--dark);
+            box-shadow: 
+                4px 0 0 var(--dark),
+                8px 0 0 var(--dark),
+                12px 0 0 var(--dark),
+                16px 0 0 var(--dark),
+                0 4px 0 var(--dark),
+                16px 4px 0 var(--dark),
+                0 8px 0 var(--dark),
+                4px 8px 0 var(--dark),
+                8px 8px 0 var(--dark),
+                12px 8px 0 var(--dark),
+                16px 8px 0 var(--dark),
+                0 12px 0 var(--dark),
+                16px 12px 0 var(--dark),
+                0 16px 0 var(--dark),
+                16px 16px 0 var(--dark),
+                0 20px 0 var(--dark),
+                4px 20px 0 var(--dark),
+                8px 20px 0 var(--dark),
+                12px 20px 0 var(--dark),
+                16px 20px 0 var(--dark);
+        }
+        
+        /* Instagram pixel icon */
+        .pixel-icon.instagram::before {
+            content: "";
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background-color: var(--dark);
+            box-shadow: 
+                4px 0 0 var(--dark),
+                8px 0 0 var(--dark),
+                12px 0 0 var(--dark),
+                16px 0 0 var(--dark),
+                0 4px 0 var(--dark),
+                16px 4px 0 var(--dark),
+                0 8px 0 var(--dark),
+                8px 8px 0 var(--dark),
+                16px 8px 0 var(--dark),
+                0 12px 0 var(--dark),
+                8px 12px 0 var(--dark),
+                16px 12px 0 var(--dark),
+                0 16px 0 var(--dark),
+                16px 16px 0 var(--dark),
+                0 20px 0 var(--dark),
+                4px 20px 0 var(--dark),
+                8px 20px 0 var(--dark),
+                12px 20px 0 var(--dark),
+                16px 20px 0 var(--dark);
+        }
+        
+        /* YouTube pixel icon */
+        .pixel-icon.youtube::before {
+            content: "";
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background-color: var(--dark);
+            box-shadow: 
+                4px 0 0 var(--dark),
+                8px 0 0 var(--dark),
+                12px 0 0 var(--dark),
+                16px 0 0 var(--dark),
+                0 4px 0 var(--dark),
+                8px 4px 0 var(--dark),
+                16px 4px 0 var(--dark),
+                0 8px 0 var(--dark),
+                8px 8px 0 var(--dark),
+                16px 8px 0 var(--dark),
+                0 12px 0 var(--dark),
+                8px 12px 0 var(--dark),
+                16px 12px 0 var(--dark),
+                0 16px 0 var(--dark),
+                16px 16px 0 var(--dark),
+                0 20px 0 var(--dark),
+                4px 20px 0 var(--dark),
+                8px 20px 0 var(--dark),
+                12px 20px 0 var(--dark),
+                16px 20px 0 var(--dark);
+        }
+        
+        /* Animation for post hover */
+        .post:hover .post-title {
+            animation: pixel-float 2s ease-in-out infinite;
         }
     </style>
 </head>
 <body>
-    <!-- Floating Pixels -->
-    <div class="floating-pixel" style="top: 10%; left: 20%; animation-delay: 0s;"></div>
-    <div class="floating-pixel" style="top: 30%; left: 80%; animation-delay: 2s;"></div>
-    <div class="floating-pixel" style="top: 50%; left: 10%; animation-delay: 4s;"></div>
-    <div class="floating-pixel" style="top: 70%; left: 90%; animation-delay: 6s;"></div>
-    <div class="floating-pixel" style="top: 90%; left: 30%; animation-delay: 8s;"></div>
-    
-    <div class="pixel-container">
+    <div class="container">
         <header>
-            <div class="logo">WF</div>
+            <div class="site-logo">
+                <div class="logo-pixel">Pixel Blog</div>
+            </div>
             <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#books">Books</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Categories</a>
+                <a href="#">New Post</a>
+                <a href="#">Contact</a>
             </nav>
         </header>
         
-        <section id="home" class="hero">
-            <h1>Wildan Fauzy</h1>
-            <p>Penulis amatir dari Indonesia. Menulis novel, cerpen, dan esai.</p>
-        </section>
-        
-        <section id="books" class="books">
-            <h2 class="section-title">My Books</h2>
-            <div class="book-container">
-                <div class="book-card">
-                    <div class="book-cover" data-title="Kandang Babi"></div>
-                    <h3>Kandang Babi</h3>
-                    <div class="year">2017</div>
-                    <div class="book-details">
-                        <p><strong>Penerbit:</strong> Guepedia</p>
-                        <p><strong>ISBN:</strong> 9786024430986</p>
-                        <p><strong>Halaman:</strong> 192</p>
-                    </div>
-                    <div class="book-synopsis">
-                        Kandang babi hanya julukan sebuah tempat tinggal, Benda mati dan juga tidak bernapas, tetapi mempunyai nama, perkenalkan namanya adalah "Kandang Babi", dia tidak ingin nama yang lain, tidak ada yang tahu dari mana namanya berasal, dan juga tidak mempunyai silsilah keluarga, muncul dengan sendirinya, dan perlu diingat ini bukan kandang babi yang kalian kira.
-                    </div>
-                    <button class="read-more-btn">Read More</button>
-                </div>
-                
-                <div class="book-card">
-                    <div class="book-cover" data-title="Anak Babi"></div>
-                    <h3>Anak Babi</h3>
-                    <div class="year">2019</div>
-                    <div class="book-details">
-                        <p><strong>Penerbit:</strong> Guepedia</p>
-                        <p><strong>ISBN:</strong> 9786237391449</p>
-                        <p><strong>Halaman:</strong> 90</p>
-                    </div>
-                    <div class="book-synopsis">
-                        Anak babi sekumpulan cerita adalah kumpulan tulisan dari penulis sendiri yang masih berceceran, dikumpulkan tulisan tersebut menjadikan judul "Anak babi sekumpulan cerita" merupakan catatan dari berbagai kisah pengalaman suka duka dan cinta dirangkum dalam buku ini.
-                    </div>
-                    <button class="read-more-btn">Read More</button>
-                </div>
+        <section class="cover">
+            <img src="/api/placeholder/1200/400" alt="Pixel Blog Cover">
+            <div class="cover-text">
+                <h1>Welcome to Pixel Blog</h1>
+                <p>A retro-styled space for your thoughts, stories, and pixel art adventures.</p>
             </div>
         </section>
         
-        <section id="about" class="about">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-image">
-                    <div class="pixel-author">
-                        <div class="pixel-head">
-                            <div class="pixel-eye left"></div>
-                            <div class="pixel-eye right"></div>
-                            <div class="pixel-mouth"></div>
+        <div class="content-wrapper">
+            <main>
+                <section class="post-form pixel-border">
+                    <h2 class="post-title">Create a New Blog Post</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="post-title">Post Title</label>
+                            <input type="text" id="post-title" name="post-title" placeholder="Enter your post title">
                         </div>
-                        <div class="pixel-body">
-                            <div class="pixel-arm left"></div>
-                            <div class="pixel-arm right"></div>
+                        
+                        <div class="form-group">
+                            <label for="post-category">Category</label>
+                            <select id="post-category" name="post-category">
+                                <option value="">Select a category</option>
+                                <option value="pixel-art">Pixel Art</option>
+                                <option value="retro-gaming">Retro Gaming</option>
+                                <option value="tutorials">Tutorials</option>
+                                <option value="personal">Personal</option>
+                            </select>
                         </div>
+                        
+                        <div class="form-group">
+                            <label for="post-cover">Cover Image URL</label>
+                            <input type="text" id="post-cover" name="post-cover" placeholder="Enter image URL or upload">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="post-content">Content</label>
+                            <textarea id="post-content" name="post-content" placeholder="Write your blog post here..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="post-tags">Tags (comma separated)</label>
+                            <input type="text" id="post-tags" name="post-tags" placeholder="pixel art, retro, tutorial">
+                        </div>
+                        
+                        <button type="submit" class="form-button">Publish Post</button>
+                    </form>
+                </section>
+                
+                <div class="post">
+                    <div class="post-header">
+                        <h2 class="post-title">The Art of Pixel Design</h2>
+                        <div class="post-meta">Posted on March 2, 2025 | Category: Pixel Art</div>
+                    </div>
+                    <div class="post-content">
+                        <p>Pixel art has been making a comeback in recent years, with many indie games and digital artists embracing the retro aesthetic. From its humble beginnings in early video games to the sophisticated pixel art we see today, this art form has evolved while maintaining its characteristic charm.</p>
+                        <img src="/api/placeholder/800/400" alt="Pixel Art Example">
+                        <p>Creating good pixel art requires attention to detail and an understanding of the limitations and strengths of the medium. Unlike other digital art forms, pixel art is created pixel by pixel, with each dot carefully placed to contribute to the whole image.</p>
+                        <a href="#" class="read-more">Read More</a>
                     </div>
                 </div>
                 
-                <div class="about-text">
-                    <p>Wildan Fauzy is an author from Indonesia. Write novels, short stories, essays. Pig pen and piglet book a collection of stories.</p>
-                    <p>Wildan was born in Cirebon, West Java, Indonesia, on March 26, 1996. Raised in a small village called Budur, about an hour's drive from the city of Cirebon.</p>
-                    <p>His journey as a writer began with his passion for storytelling and capturing the essence of everyday life. Through his unique perspective and creative narration, Wildan brings characters to life in his works.</p>
+                <div class="post">
+                    <div class="post-header">
+                        <h2 class="post-title">Retro Gaming Classics That Still Hold Up</h2>
+                        <div class="post-meta">Posted on March 1, 2025 | Category: Retro Gaming</div>
+                    </div>
+                    <div class="post-content">
+                        <p>Despite the advancement in gaming technology, many retro games from the 80s and 90s still provide an enjoyable gaming experience. These classics have stood the test of time due to their innovative gameplay, memorable characters, and timeless design principles.</p>
+                        <img src="/api/placeholder/800/400" alt="Retro Gaming Classics">
+                        <p>From platformers like Super Mario Bros. to RPGs like Chrono Trigger, these games laid the foundation for modern gaming while working within the technical constraints of their time. What makes these games still relevant today?</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
                 </div>
-            </div>
-        </section>
-        
-        <footer id="contact">
-            <div class="social-links">
-                <a href="https://facebook.com/wilfauzy" class="social-link" target="_blank" aria-label="Facebook">
-                    <div class="pixel-icon facebook-icon"></div>
-                </a>
-                <a href="https://instagram.com/wilfauzy" class="social-link" target="_blank" aria-label="Instagram">
-                    <div class="pixel-icon instagram-icon"></div>
-                </a>
-                <a href="https://pinterest.com/wilfauzy" class="social-link" target="_blank" aria-label="Pinterest">
-                    <div class="pixel-icon pinterest-icon"></div>
-                </a>
-                <a href="https://www.goodreads.com/author/show/19306620.Wildan_Fauzy" class="social-link" target="_blank" aria-label="Goodreads">
-                    <div class="pixel-icon goodreads-icon"></div>
-                </a>
-            </div>
-            <div class="copyright">
-                &copy; 2025 Wildan Fauzy. All rights reserved.
-            </div>
-        </footer>
-    </div>
-    
-    <script>
-        // Create floating pixels dynamically
-        function createFloatingPixels() {
-            for (let i = 0; i < 15; i++) {
-                const pixel = document.createElement('div');
-                pixel.className = 'floating-pixel';
-                
-                // Random position
-                const top = Math.random() * 100;
-                const left = Math.random() * 100;
-                
-                // Random size between 3px and 6px
-                const size = 3 + Math.random() * 3;
-                
-                // Random animation duration
-                const duration = 10 + Math.random() * 20;
-                
-                // Random animation delay
-                const delay = Math.random() * 10;
-                
-                pixel.style.top = `${top}%`;
-                pixel.style.left = `${left}%`;
-                pixel.style.width = `${size}px`;
-                pixel.style.height = `${size}px`;
-                pixel.style.animationDuration = `${duration}s`;
-                pixel.style.animationDelay = `${delay}s`;
-                
-                document.body.appendChild(pixel);
-            }
-        }
-        
-        // Expand book synopsis
-        function setupReadMoreButtons() {
-            const readMoreBtns = document.querySelectorAll('.read-more-btn');
+            </main>
             
-            readMoreBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const synopsis = this.previousElementSibling;
-                    
-                    if (synopsis.style.height === '100px' || synopsis.style.height === '') {
-                        synopsis.style.height = 'auto';
-                        synopsis.style.overflow = 'visible';
-                        synopsis.style.marginBottom = '20px';
-                        synopsis.querySelector('::after')?.remove();
-                        this.textContent = 'Show Less';
-                    } else {
-                        synopsis.style.height = '100px';
-                        synopsis.style.overflow = 'hidden';
-                        this.textContent = 'Read More';
-                    }
-                });
-            });
-        }
+            <aside>
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Categories</h3>
+                    <div class="sidebar-content">
+                        <ul class="categories">
+                            <li><a href="#">Pixel Art</a></li>
+                            <li><a href="#">Retro Gaming</a></li>
+                            <li><a href="#">Tutorials</a></li>
+                            <li><a href="#">Personal</a></li>
+                            <li><a href="#">Technology</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Recent Posts</h3>
+                    <div class="sidebar-content">
+                        <ul class="recent-posts">
+                            <li>
+                                <a href="#">The Art of Pixel Design</a>
+                                <span class="post-date">March 2, 2025</span>
+                            </li>
+                            <li>
+                                <a href="#">Retro Gaming Classics That Still Hold Up</a>
+                                <span class="post-date">March 1, 2025</span>
+                            </li>
+                            <li>
+                                <a href="#">Getting Started with Pixel Art: Tools and Techniques</a>
+                                <span class="post-date">February 28, 2025</span>
+                            </li>
+                            <li>
+                                <a href="#">The Evolution of 8-bit Music</a>
+                                <span class="post-date">February 25, 2025</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">About</h3>
+                    <div class="sidebar-content">
+                        <p>Pixel Blog is a space dedicated to all things retro, pixelated, and nostalgic. Join us as we explore the art, games, and culture of the pixel realm.</p>
+                    </div>
+                </div>
+            </aside>
+        </div>
         
-        // Initialize the website
-        document.addEventListener('DOMContentLoaded', function() {
-            createFloatingPixels();
-            setupReadMoreButtons();
-        });
-    </script>
-</body>
-</html>
+        <footer>
+            <div class="footer-content container">
+                <div class="footer-section">
+                    <div class="footer-logo">Pixel Blog</div>
+                    <p>A retro-styled space for your thoughts, stories, and pixel art adventures.</p>
+                    <div class="social-icons">
+                        <a href="#"><div class="pixel-icon twitter"></div></a>
+                        <a href="#"><div class="pixel-icon facebook"></div></a>
+                        <a href="#"><div class="pixel-icon instagram"></div></a>
+                        <a href="#"><div class="pixel-icon youtube"></div></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="widget-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="widget-title">Subscribe</h3>
+                    <p>Stay updated with our latest posts and announcements.</p>
+                    <form class="subscribe-form">
+                        <div class="form-group
