@@ -3,44 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wildan Fauzy - Penulis Amatir</title>
     <meta name="description" content="Penulis amatir dari Indonesia. Menulis novel, cerpen, dan esai. Lahir di Cirebon, Jawa Barat, Indonesia.">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://wildan.fauzy.eu.org/">
-    <meta property="og:title" content="Wildan Fauzy - Penulis Amatir">
-    <meta property="og:description" content="Penulis amatir dari Indonesia. Menulis novel, cerpen, dan esai. Lahir di Cirebon, Jawa Barat, Indonesia.">
-    <meta property="og:image" content="https://wildan.fauzy.eu.org/wildan-fauzy.jpg">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://wildan.fauzy.eu.org/">
-    <meta property="twitter:title" content="Wildan Fauzy - Penulis Amatir">
-    <meta property="twitter:description" content="Penulis amatir dari Indonesia. Menulis novel, cerpen, dan esai. Lahir di Cirebon, Jawa Barat, Indonesia.">
-    <meta property="twitter:image" content="https://wildan.fauzy.eu.org/wildan-fauzy.jpg">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.png">
-    
-    <!-- Google Fonts -->
+    <title>Wildan Fauzy - Penulis Amatir</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=VT323&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #FFD54F;
-            --secondary-color: #212121;
-            --accent-color: #5D4037;
-            --background-color: #FFFDE7;
-            --text-color: #263238;
-            --book-bg-1: #E1BEE7;
-            --book-bg-2: #BBDEFB;
-            --border-radius: 8px;
-            --spacing: 20px;
-            --grid-pattern: repeating-linear-gradient(0deg, var(--secondary-color), var(--secondary-color) 1px, transparent 1px, transparent 20px),
-                           repeating-linear-gradient(90deg, var(--secondary-color), var(--secondary-color) 1px, transparent 1px, transparent 20px);
+            --primary-color: #FFD700;
+            --secondary-color: #f0f0f0;
+            --text-color: #111827;
+            --bg-color: #ffffff;
+            --border-color: #000000;
+            --accent-color: #FFD700;
         }
         
         * {
@@ -50,32 +25,27 @@
         }
         
         body {
-            font-family: 'Space Grotesk', sans-serif;
-            background-color: var(--background-color);
-            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            position: relative;
-            background-image: var(--grid-pattern);
-            background-size: 20px 20px;
-            background-attachment: fixed;
-            background-position: -1px -1px;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            background-image: 
+                linear-gradient(rgba(200, 200, 200, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(200, 200, 200, 0.1) 1px, transparent 1px);
+            background-size: 2rem 2rem;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 var(--spacing);
-            position: relative;
-            z-index: 1;
+            padding: 0 1rem;
         }
         
+        /* Header Styles */
         header {
-            background-color: var(--primary-color);
-            padding: 20px 0;
-            border-bottom: 3px solid var(--secondary-color);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            padding: 1rem 0;
+            border-bottom: 3px solid var(--border-color);
+            background-color: var(--bg-color);
         }
         
         .header-container {
@@ -87,551 +57,589 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 1rem;
             text-decoration: none;
-            color: var(--secondary-color);
         }
         
-        .logo img {
-            width: 40px;
-            height: 40px;
-            border: 2px solid var(--secondary-color);
-            border-radius: 50%;
+        .logo-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--border-color);
+            padding: 0.5rem;
+            position: relative;
         }
         
-        .logo h1 {
-            font-family: 'VT323', monospace;
-            font-size: 2rem;
-            margin: 0;
+        .logo-icon:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--border-color);
+            top: 3px;
+            left: 3px;
+            z-index: -1;
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--text-color);
         }
         
         .nav-toggle {
             display: none;
             background: none;
-            border: none;
-            font-size: 1.5rem;
+            border: 2px solid var(--border-color);
             cursor: pointer;
-            color: var(--secondary-color);
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 20px;
-        }
-        
-        nav a {
-            text-decoration: none;
-            color: var(--secondary-color);
-            font-weight: bold;
-            padding: 5px 10px;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-        
-        nav a:hover, nav a.active {
-            background-color: var(--secondary-color);
-            color: var(--primary-color);
-            border-radius: var(--border-radius);
-        }
-        
-        .hero {
-            min-height: 500px;
-            display: flex;
-            align-items: center;
-            padding: 60px 0;
+            padding: 0.5rem;
             position: relative;
-            overflow: hidden;
         }
         
-        .hero::before {
+        .nav-toggle:after {
             content: '';
             position: absolute;
-            right: -100px;
-            bottom: -100px;
-            width: 400px;
-            height: 400px;
-            background-color: var(--primary-color);
-            border-radius: 50%;
-            opacity: 0.2;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--border-color);
+            top: 3px;
+            left: 3px;
             z-index: -1;
         }
         
-        .hero-content {
-            width: 60%;
-            padding-right: 40px;
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
         }
         
-        .hero h2 {
-            font-family: 'VT323', monospace;
-            font-size: 3rem;
-            margin-bottom: 20px;
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 0.25rem;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
             line-height: 1.2;
         }
         
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 25px;
-            background-color: var(--primary-color);
-            color: var(--secondary-color);
-            text-decoration: none;
-            border-radius: var(--border-radius);
-            font-weight: bold;
-            border: 2px solid var(--secondary-color);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            font-family: 'Space Grotesk', sans-serif;
-            box-shadow: 4px 4px 0 var(--secondary-color);
-        }
-        
-        .btn:hover {
-            transform: translate(-2px, -2px);
-            box-shadow: 6px 6px 0 var(--secondary-color);
-        }
-        
-        .hero-image {
-            width: 40%;
+        .hero-title span {
             position: relative;
+            display: inline-block;
         }
         
-        .hero-image img {
+        .hero-title span:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0.5rem;
             width: 100%;
-            max-width: 300px;
-            border: 3px solid var(--secondary-color);
-            border-radius: var(--border-radius);
-            box-shadow: 10px 10px 0 var(--secondary-color);
-            transform: rotate(3deg);
-            transition: transform 0.3s ease;
+            height: 0.75rem;
+            background-color: var(--primary-color);
+            z-index: -1;
+            transform: skew(-5deg);
         }
         
-        .hero-image img:hover {
-            transform: rotate(0);
+        .hero-subtitle {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            text-decoration: none;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            font-weight: 700;
+            padding: 0.75rem 1.5rem;
+            border: 3px solid var(--border-color);
+            position: relative;
+            transition: transform 0.2s ease;
+        }
+        
+        .cta-button:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--border-color);
+            top: 5px;
+            left: 5px;
+            z-index: -1;
+            transition: transform 0.2s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translate(2px, 2px);
+        }
+        
+        .cta-button:hover:after {
+            transform: translate(-2px, -2px);
+        }
+        
+        /* Books Section */
+        .books {
+            padding: 4rem 0;
         }
         
         .section-title {
-            font-family: 'VT323', monospace;
             font-size: 2.5rem;
-            text-align: center;
-            margin: 60px 0 40px;
+            font-weight: 900;
+            margin-bottom: 2rem;
             position: relative;
+            display: inline-block;
         }
         
-        .section-title::after {
+        .section-title:after {
             content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
+            position: absolute;
+            left: 0;
+            bottom: 0.25rem;
+            width: 100%;
+            height: 0.5rem;
             background-color: var(--primary-color);
-            margin: 15px auto 0;
-            border-radius: 2px;
-        }
-        
-        .books {
-            padding: 40px 0 80px;
+            z-index: -1;
+            transform: skew(-5deg);
         }
         
         .books-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 40px;
+            gap: 2rem;
         }
         
         .book-card {
-            background-color: white;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            border: 3px solid var(--secondary-color);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 3px solid var(--border-color);
+            padding: 1.5rem;
             position: relative;
-            box-shadow: 8px 8px 0 var(--secondary-color);
+            background-color: var(--bg-color);
+            transition: transform 0.2s ease;
+        }
+        
+        .book-card:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--border-color);
+            top: 8px;
+            left: 8px;
+            z-index: -1;
+            transition: transform 0.2s ease;
         }
         
         .book-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 12px 12px 0 var(--secondary-color);
+            transform: translate(4px, 4px);
         }
         
-        .book-card:nth-child(odd) {
-            background-color: var(--book-bg-1);
-        }
-        
-        .book-card:nth-child(even) {
-            background-color: var(--book-bg-2);
+        .book-card:hover:after {
+            transform: translate(-4px, -4px);
         }
         
         .book-image {
-            height: 300px;
-            overflow: hidden;
-        }
-        
-        .book-image img {
             width: 100%;
-            height: 100%;
+            height: 400px;
             object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .book-card:hover .book-image img {
-            transform: scale(1.05);
-        }
-        
-        .book-content {
-            padding: 20px;
+            border: 2px solid var(--border-color);
+            margin-bottom: 1rem;
         }
         
         .book-title {
             font-size: 1.5rem;
-            margin-bottom: 10px;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
         }
         
         .book-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 15px;
-            font-size: 0.9rem;
-        }
-        
-        .book-meta span {
-            background-color: var(--primary-color);
-            padding: 3px 10px;
-            border-radius: 20px;
-            border: 1px solid var(--secondary-color);
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+            color: #666;
         }
         
         .book-description {
-            margin-bottom: 20px;
-            display: -webkit-box;
-            -webkit-line-clamp: 4;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
+            margin-bottom: 1.5rem;
         }
         
+        .book-details {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        .book-details p {
+            margin-bottom: 0.25rem;
+        }
+        
+        /* About Section */
         .about {
-            padding: 80px 0;
-            background-color: white;
-            border-top: 3px solid var(--secondary-color);
-            border-bottom: 3px solid var(--secondary-color);
-        }
-        
-        .about-container {
-            display: flex;
-            align-items: center;
-            gap: 60px;
-        }
-        
-        .about-image {
-            flex: 1;
-        }
-        
-        .about-image img {
-            width: 100%;
-            max-width: 400px;
-            border: 3px solid var(--secondary-color);
-            border-radius: var(--border-radius);
-            box-shadow: 10px 10px 0 var(--accent-color);
+            padding: 4rem 0;
         }
         
         .about-content {
-            flex: 2;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            align-items: start;
         }
         
-        .about-content h2 {
-            font-family: 'VT323', monospace;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+        .author-image {
+            width: 100%;
+            border: 3px solid var(--border-color);
+            position: relative;
         }
         
-        .about-content p {
-            margin-bottom: 20px;
+        .author-image:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--border-color);
+            top: 8px;
+            left: 8px;
+            z-index: -1;
         }
         
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 30px;
+        .author-bio {
+            font-size: 1.125rem;
         }
         
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: var(--primary-color);
-            color: var(--secondary-color);
-            border-radius: 50%;
-            text-decoration: none;
-            border: 2px solid var(--secondary-color);
-            transition: all 0.3s ease;
-            font-size: 1.2rem;
-        }
-        
-        .social-links a:hover {
-            background-color: var(--secondary-color);
-            color: var(--primary-color);
-            transform: translateY(-5px);
-        }
-        
+        /* Footer */
         footer {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 40px 0 20px;
+            background-color: var(--text-color);
+            color: var(--bg-color);
+            padding: 2rem 0;
+            border-top: 3px solid var(--border-color);
         }
         
         .footer-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
         }
         
-        .footer-col h3 {
-            font-family: 'VT323', monospace;
+        .footer-logo {
             font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: var(--primary-color);
+            font-weight: 900;
+            margin-bottom: 1rem;
         }
         
-        .footer-col ul {
+        .footer-links h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-links h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 0.25rem;
+            background-color: var(--primary-color);
+        }
+        
+        .footer-links ul {
             list-style: none;
         }
         
-        .footer-col li {
-            margin-bottom: 10px;
+        .footer-links li {
+            margin-bottom: 0.5rem;
         }
         
-        .footer-col a {
-            color: white;
+        .footer-links a {
+            color: var(--bg-color);
             text-decoration: none;
-            transition: color 0.3s ease;
         }
         
-        .footer-col a:hover {
+        .footer-links a:hover {
+            text-decoration: underline;
             color: var(--primary-color);
         }
         
-        .footer-bottom {
-            margin-top: 40px;
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
         }
         
-        /* Stars decoration */
-        .star {
+        .social-link {
+            color: var(--bg-color);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem;
+            border: 2px solid var(--bg-color);
+            position: relative;
+        }
+        
+        .social-link:after {
+            content: '';
             position: absolute;
-            background-color: var(--primary-color);
-            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--bg-color);
+            top: 3px;
+            left: 3px;
             z-index: -1;
-            opacity: 0.6;
         }
         
-        .star-1 {
-            width: 50px;
-            height: 50px;
-            top: 10%;
-            left: 10%;
-            animation: float 8s infinite ease-in-out;
+        .social-link:hover {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            border-color: var(--text-color);
         }
         
-        .star-2 {
-            width: 30px;
-            height: 30px;
-            top: 60%;
-            right: 15%;
-            animation: float 7s infinite ease-in-out reverse;
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
         
-        .star-3 {
-            width: 40px;
-            height: 40px;
-            bottom: 20%;
-            left: 20%;
-            animation: float 10s infinite ease-in-out 2s;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0); }
-            50% { transform: translateY(-20px) rotate(10deg); }
-        }
-        
-        /* Responsive styles */
-        @media (max-width: 992px) {
-            .hero-content, .hero-image {
-                width: 50%;
-            }
-            
-            .about-container {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .about-image {
-                margin-bottom: 30px;
-            }
-            
-            .social-links {
-                justify-content: center;
-            }
-        }
-        
+        /* Responsive Styles */
         @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
             .nav-toggle {
                 display: block;
             }
             
-            nav {
-                position: fixed;
-                top: 83px;
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
                 left: 0;
                 width: 100%;
-                background-color: var(--primary-color);
-                border-bottom: 3px solid var(--secondary-color);
-                padding: 20px;
-                transform: translateY(-150%);
-                transition: transform 0.3s ease;
-            }
-            
-            nav.active {
-                transform: translateY(0);
-            }
-            
-            nav ul {
+                background-color: var(--bg-color);
+                border-bottom: 3px solid var(--border-color);
+                padding: 1rem;
                 flex-direction: column;
-                gap: 15px;
+                gap: 1rem;
             }
             
-            .hero {
-                flex-direction: column;
-                text-align: center;
+            .nav-menu.active {
+                display: flex;
             }
             
-            .hero-content, .hero-image {
-                width: 100%;
-                padding-right: 0;
-                margin-bottom: 40px;
-            }
-            
-            .hero-image img {
-                margin: 0 auto;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .hero h2 {
-                font-size: 2.5rem;
-            }
-            
-            .books-grid {
+            .about-content {
                 grid-template-columns: 1fr;
+            }
+            
+            .author-image {
+                max-width: 300px;
+                margin: 0 auto;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Stars decoration -->
-    <div class="star star-1"></div>
-    <div class="star star-2"></div>
-    <div class="star star-3"></div>
-    
     <!-- Header -->
-    <header>
+    <header id="header">
         <div class="container header-container">
-            <a href="#" class="logo">
-                <img src="https://wildan.fauzy.eu.org/wildan-fauzy.jpg" alt="Wildan Fauzy">
-                <h1>RetroFauzy</h1>
+            <a href="/" class="logo">
+                <div class="logo-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 19.5C4 18.837 4.26339 18.2011 4.73223 17.7322C5.20107 17.2634 5.83696 17 6.5 17H20"></path>
+                        <path d="M6.5 2H20V22H6.5C5.83696 22 5.20107 21.7366 4.73223 21.2678C4.26339 20.7989 4 20.163 4 19.5V4.5C4 3.83696 4.26339 3.20107 4.73223 2.73223C5.20107 2.26339 5.83696 2 6.5 2V2Z"></path>
+                    </svg>
+                </div>
+                <div class="logo-text">WilFauzy</div>
             </a>
             
-            <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+            <button class="nav-toggle" id="navToggle">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
             
-            <nav>
-                <ul>
-                    <li><a href="#" class="active">Beranda</a></li>
-                    <li><a href="#books">Buku</a></li>
-                    <li><a href="#about">Tentang</a></li>
-                </ul>
-            </nav>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#books" class="nav-link">Buku</a></li>
+                <li><a href="#about" class="nav-link">Tentang</a></li>
+                <li><a href="#footer" class="nav-link">Kontak</a></li>
+            </ul>
         </div>
     </header>
     
-    <!-- Hero section -->
+    <!-- Hero Section -->
     <section class="hero">
-        <div class="container" style="display: flex; align-items: center;">
-            <div class="hero-content">
-                <h2>Wildan Fauzy</h2>
-                <p>Penulis amatir dari Indonesia. Menulis novel, cerpen, dan esai. Lahir di Cirebon, Jawa Barat, Indonesia.</p>
-                <a href="#books" class="btn">Lihat Karya ⟶</a>
-            </div>
-            <div class="hero-image">
-                <img src="https://wildan.fauzy.eu.org/wildan-fauzy.jpg" alt="Wildan Fauzy">
-            </div>
+        <div class="container">
+            <h1 class="hero-title">Penulis <span>Amatir</span></h1>
+            <p class="hero-subtitle">Penulis amatir dari Indonesia. Menulis novel, cerpen, dan esai. Lahir di Cirebon, Jawa Barat, Indonesia.</p>
+            <a href="#books" class="cta-button">Lihat Karya</a>
         </div>
     </section>
     
-    <!-- Books section -->
-    <section id="books" class="books">
+    <!-- Books Section -->
+    <section class="books" id="books">
         <div class="container">
-            <h2 class="section-title">Buku Karya</h2>
-            
+            <h2 class="section-title">Karya Buku</h2>
             <div class="books-grid">
                 <!-- Book 1 -->
-                <div class="book-card">
-                    <div class="book-image">
-                        <img src="https://wildan.fauzy.eu.org/kandang-babi.jpg" alt="Kandang Babi">
+                <article class="book-card">
+                    <img src="/kandang-babi.jpg" alt="Kandang Babi" class="book-image">
+                    <h3 class="book-title">Kandang Babi</h3>
+                    <div class="book-meta">Novel (2017)</div>
+                    <div class="book-description">
+                        <p>Kandang babi hanya julukan sebuah tempat tinggal, Benda mati dan juga tidak bernapas, tetapi mempunyai nama, perkenalkan namanya adalah "Kandang Babi", dia tidak ingin nama yang lain, tidak ada yang tahu dari mana namanya berasal, dan juga tidak mempunyai silsilah keluarga, muncul dengan sendirinya, dan perlu diingat ini bukan kandang babi yang kalian kira.</p>
                     </div>
-                    <div class="book-content">
-                        <h3 class="book-title">Kandang Babi</h3>
-                        <div class="book-meta">
-                            <span>Novel</span>
-                            <span>2017</span>
-                            <span>192 Halaman</span>
-                        </div>
-                        <p class="book-description">Kandang babi hanya julukan sebuah tempat tinggal, Benda mati dan juga tidak bernapas, tetapi mempunyai nama, perkenalkan namanya adalah "Kandang Babi", dia tidak ingin nama yang lain, tidak ada yang tahu dari mana namanya berasal, dan juga tidak mempunyai silsilah keluarga, muncul dengan sendirinya, dan perlu diingat ini bukan kandang babi yang kalian kira.</p>
-                        <a href="#" class="btn">Selengkapnya</a>
+                    <div class="book-details">
+                        <p><strong>Penerbit:</strong> Guepedia Publisher</p>
+                        <p><strong>ISBN:</strong> 9786024430986</p>
+                        <p><strong>Halaman:</strong> 192 halaman</p>
                     </div>
-                </div>
+                </article>
                 
                 <!-- Book 2 -->
-                <div class="book-card">
-                    <div class="book-image">
-                        <img src="https://wildan.fauzy.eu.org/anak-babi.jpg" alt="Anak Babi">
+                <article class="book-card">
+                    <img src="/anak-babi.jpg" alt="Anak Babi Kumpulan Cerpen" class="book-image">
+                    <h3 class="book-title">Anak Babi</h3>
+                    <div class="book-meta">Kumpulan Cerpen (2019)</div>
+                    <div class="book-description">
+                        <p>Anak babi sekumpulan cerita adalah kumpulan tulisan dari penulis sendiri yang masih berceceran, dikumpulkan tulisan tersebut menjadikan judul "Anak babi sekumpulan cerita" merupakan catatan dari berbagai kisah pengalaman suka duka dan cinta dirangkum dalam buku ini.</p>
                     </div>
-                    <div class="book-content">
-                        <h3 class="book-title">Anak Babi</h3>
-                        <div class="book-meta">
-                            <span>Kumpulan Cerpen</span>
-                            <span>2019</span>
-                            <span>90 Halaman</span>
-                        </div>
-                        <p class="book-description">Anak babi sekumpulan cerita adalah kumpulan tulisan dari penulis sendiri yang masih berceceran, dikumpulkan tulisan tersebut menjadikan judul "Anak babi sekumpulan cerita" merupakan catatan dari berbagai kisah pengalaman suka duka dan cinta dirangkum dalam buku ini.</p>
-                        <a href="#" class="btn">Selengkapnya</a>
+                    <div class="book-details">
+                        <p><strong>Penerbit:</strong> Guepedia Publisher</p>
+                        <p><strong>ISBN:</strong> 9786237391449</p>
+                        <p><strong>Halaman:</strong> 90 halaman</p>
                     </div>
+                </article>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">Tentang Penulis</h2>
+            <div class="about-content">
+                <div>
+                    <img src="/wildan-faizy.jpg" alt="Wildan Fauzy" class="author-image">
+                </div>
+                <div class="author-bio">
+                    <p>Wildan Fauzy adalah seorang penulis dari Indonesia. Menulis novel, cerita pendek, esai. kandang babi dan anak babi merupakan kumpulan cerita.</p>
+                    <br>
+                    <p>Wildan lahir di Cirebon, Jawa Barat, Indonesia, pada tanggal 26 Maret 1996. Dibesarkan di sebuah desa kecil, sekitar satu jam perjalanan dari kota Cirebon.</p>
+                    <br>
+                    <p>Perjalanan menulis Wildan dimulai dengan cerita pendek dan esai, yang akhirnya membuahkan hasil berupa penerbitan novel pertamanya "Kandang Babi" pada tahun 2017, diikuti oleh kumpulan cerita pendek "Anak Babi" pada tahun 2019.</p>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- About section -->
-    <section id="about" class="about">
-        <div class="container about-container">
-            <div class="about-image">
-                <img src="https://wildan.fauzy.eu.org/wildan-fauzy.jpg" alt="Wildan Fauzy">
-            </div>
-            <div class="about-content">
-                <h2>Tentang Penulis</h2>
-                <p>Wildan Fauzy adalah seorang penulis dari Indonesia. Menulis novel, cerita pendek, esai. kandang babi dan anak babi merupakan kumpulan cerita.</p>
-                <p>Wildan lahir di Cirebon, Jawa Barat, Indonesia, pada tanggal 26 Maret 1996. Dibesarkan di sebuah desa kecil, sekitar satu jam perjalanan dari kota Cirebon.</p>
-                <p>Perjalanan menulis Wildan dimulai dengan cerita pendek dan esai, yang akhirnya membuahkan hasil berupa penerbitan novel pertamanya "Kandang Babi" pada tahun 2017, diikuti oleh kumpulan cerita pendek "Anak Babi" pada tahun 2019.</p>
-                
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container footer-container">
+            <div class="footer-info">
+                <div class="footer-logo">Wildan Fauzy</div>
+                <p>Penulis amatir dari Indonesia. Menulis novel, cerpen, dan esai.</p>
                 <div class="social-links">
-                    <a href="https://pinterest.com/wilfauzy" aria-label="Pinterest"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.627 0-12 5.373-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg></a>
-                    <a href="https://instagram.com/wilfauzy" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                    <a href="https://pinterest.com/wilfauzy" class="social-link" target="_blank">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M8 12h8M12 8v8"></path>
+                            <circle cx="12" cy="12" r="10"></circle>
+                        </svg>
+                    </a>
+                    <a href="https://instagram.com/wilfauzy" class="social-link" target="_blank">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="https://goodreads.com/author/show/19306620.Wildan_Fauzy" class="social-link" target="_blank">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Tautan</h3>
+                <ul>
+                    <li><a href="#books">Buku</a></li>
+                    <li><a href="#about">Tentang</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Kontak</h3>
+                <ul>
+                    <li>Email: <a href="mailto:wildan@fauzy.eu.org">wildan@fauzy.eu.org</a></li>
+                    <li>Website: <a href="https://wildan.fauzy.eu.org">wildan.fauzy.eu.org</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <div class="container">
+                <p>&copy; 2025 Wildan Fauzy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Navigation toggle
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
