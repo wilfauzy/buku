@@ -3,521 +3,430 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wildan Fauzy - Penulis amatir</title>
     <meta name="description" content="Penulis amatir dari Indonesia. Menulis novel, cerpen, dan esai. Lahir di Cirebon, Jawa Barat, Indonesia.">
-    
-    <!-- Meta tags for SEO -->
-    <meta property="og:title" content="Wildan Fauzy - Penulis amatir">
-    <meta property="og:description" content="Penulis amatir dari Indonesia. Menulis novel, cerpen, dan esai. Lahir di Cirebon, Jawa Barat, Indonesia.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://wildan.fauzy.eu.org">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Wildan Fauzy - Penulis amatir">
-    <meta name="twitter:description" content="Penulis amatir dari Indonesia. Menulis novel, cerpen, dan esai. Lahir di Cirebon, Jawa Barat, Indonesia.">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <title>Wildan Fauzy - Penulis Amatir</title>
     <style>
         :root {
-            --primary-color: #FFD700;
-            --primary-hover: #F0C800;
+            --primary-color: #FFDD00;
+            --text-color: #16161D;
             --background-color: #FFFFFF;
-            --text-color: #111111;
-            --border-color: #000000;
-            --secondary-bg: #F5F5F5;
-            --card-shadow: 4px 4px 0px rgba(0, 0, 0, 1);
-            --spacing: 1rem;
+            --line-color: #E5E5E5;
+            --shadow-color: rgba(0, 0, 0, 0.5);
         }
-        
+
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
-        
+
         body {
-            font-family: 'Space Mono', monospace;
-            line-height: 1.6;
-            color: var(--text-color);
+            font-family: 'Courier New', monospace;
             background-color: var(--background-color);
-            background-image: 
-                linear-gradient(rgba(220, 220, 220, 0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(220, 220, 220, 0.1) 1px, transparent 1px);
-            background-size: 25px 25px;
-            padding-bottom: 2rem;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-image: linear-gradient(var(--line-color) 1px, transparent 1px), 
+                              linear-gradient(90deg, var(--line-color) 1px, transparent 1px);
+            background-size: 50px 50px;
+            position: relative;
         }
-        
+
         .container {
-            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 var(--spacing);
+            padding: 0 20px;
         }
-        
-        /* Header styles */
+
+        /* Header Styles */
         header {
-            border-bottom: 3px solid var(--border-color);
-            padding: 1rem 0;
             background-color: var(--background-color);
+            border-bottom: 2px solid var(--text-color);
+            padding: 20px 0;
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
-        
-        .header-container {
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: #fff;
+            border: 2px solid var(--text-color);
+            display: flex;
+            flex-direction: column;
+            padding: 5px;
+            box-shadow: 4px 4px 0 var(--shadow-color);
+        }
+
+        .logo-icon .icon-lines {
+            height: 2px;
+            background-color: var(--text-color);
+            margin: 2px 0;
+            width: 80%;
+        }
+
+        .logo-icon .icon-button {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--text-color);
+            margin: 2px;
+        }
+
+        .logo-icon .icon-highlight {
+            width: 60%;
+            height: 8px;
+            background-color: var(--primary-color);
+            margin-top: 2px;
+        }
+
+        .logo-text {
+            font-size: 2rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: var(--text-color);
+        }
+
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
-        .logo {
+
+        .nav-menu {
             display: flex;
-            align-items: center;
-            gap: 1rem;
+            list-style-type: none;
+        }
+
+        .nav-link {
             text-decoration: none;
             color: var(--text-color);
-        }
-        
-        .logo-icon {
-            background-color: var(--background-color);
-            border: 2px solid var(--border-color);
-            padding: 0.5rem;
-            display: flex;
-            align-items: center;
-            position: relative;
-        }
-        
-        .logo-icon::before {
-            content: "";
-            position: absolute;
-            top: 3px;
-            left: 3px;
-            width: 100%;
-            height: 100%;
-            background-color: var(--primary-color);
-            z-index: -1;
-        }
-        
-        .logo-icon img {
-            width: 40px;
-            height: 40px;
-        }
-        
-        .logo-text {
-            font-size: 1.5rem;
+            padding: 10px 15px;
             font-weight: bold;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 1.5rem;
-        }
-        
-        nav a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: bold;
-            padding: 0.5rem;
             position: relative;
             transition: all 0.3s ease;
         }
-        
-        nav a::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background-color: var(--primary-color);
-            transition: width 0.3s ease;
+
+        .nav-link:hover {
+            color: var(--primary-color);
         }
-        
-        nav a:hover::after {
-            width: 100%;
-        }
-        
+
         .mobile-menu-btn {
             display: none;
-            background: none;
-            border: 2px solid var(--border-color);
             font-size: 1.5rem;
+            background: none;
+            border: none;
             cursor: pointer;
-            padding: 0.3rem 0.6rem;
-            position: relative;
         }
-        
-        .mobile-menu-btn::after {
-            content: "";
-            position: absolute;
-            top: 4px;
-            left: 4px;
-            width: 100%;
-            height: 100%;
-            background-color: var(--primary-color);
-            z-index: -1;
-        }
-        
-        /* Hero section */
+
+        /* Hero Section */
         .hero {
-            padding: 4rem 0;
+            padding: 80px 0;
             text-align: center;
         }
-        
+
         .hero h1 {
             font-size: 3.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 20px;
             position: relative;
             display: inline-block;
         }
-        
+
         .hero h1 span {
             position: relative;
             z-index: 1;
         }
-        
+
         .hero h1 span.highlight {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .hero h1 span.highlight::before {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 0.5em;
+            color: var(--text-color);
             background-color: var(--primary-color);
-            z-index: -1;
+            padding: 0 10px;
         }
-        
+
         .hero p {
             font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
         }
-        
-        .hero-btn {
+
+        .btn {
             display: inline-block;
-            padding: 0.8rem 2rem;
+            padding: 12px 25px;
             background-color: var(--primary-color);
             color: var(--text-color);
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.1rem;
-            border: 3px solid var(--border-color);
-            position: relative;
-            transition: transform 0.1s ease;
-            margin-top: 1rem;
+            border: 2px solid var(--text-color);
+            box-shadow: 4px 4px 0 var(--shadow-color);
+            transition: all 0.3s ease;
+            margin: 10px;
         }
-        
-        .hero-btn::after {
-            content: "";
-            position: absolute;
-            top: 6px;
-            left: 6px;
-            width: 100%;
-            height: 100%;
-            border: 3px solid var(--border-color);
-            z-index: -1;
+
+        .btn:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0 var(--shadow-color);
         }
-        
-        .hero-btn:hover {
-            transform: translate(-3px, -3px);
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-color);
         }
-        
-        .hero-btn:hover::after {
-            transform: translate(6px, 6px);
+
+        /* Book Section */
+        .books {
+            padding: 80px 0;
         }
-        
-        /* Books section */
+
         .section-title {
             font-size: 2.5rem;
-            margin-bottom: 2rem;
+            margin-bottom: 50px;
             position: relative;
             display: inline-block;
         }
-        
+
         .section-title::after {
-            content: "";
+            content: '';
             position: absolute;
-            bottom: -10px;
-            left: 0;
             width: 100%;
-            height: 6px;
+            height: 8px;
             background-color: var(--primary-color);
+            bottom: 5px;
+            left: 0;
+            z-index: -1;
         }
-        
-        .books {
-            padding: 4rem 0;
-        }
-        
-        .books-grid {
+
+        .book-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
         }
-        
+
         .book-card {
             background-color: var(--background-color);
-            border: 3px solid var(--border-color);
-            position: relative;
-            transition: transform 0.2s ease;
-            height: 100%;
-        }
-        
-        .book-card::after {
-            content: "";
-            position: absolute;
-            top: 8px;
-            left: 8px;
-            width: 100%;
-            height: 100%;
-            background-color: var(--primary-color);
-            z-index: -1;
-        }
-        
-        .book-card:hover {
-            transform: translate(-5px, -5px);
-        }
-        
-        .book-card:hover::after {
-            transform: translate(5px, 5px);
-        }
-        
-        .book-img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-bottom: 3px solid var(--border-color);
-        }
-        
-        .book-info {
-            padding: 1.5rem;
-        }
-        
-        .book-title {
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .book-meta {
-            margin-bottom: 1.5rem;
-            font-size: 0.9rem;
-        }
-        
-        .book-meta span {
-            display: block;
-            margin-bottom: 0.3rem;
-        }
-        
-        .book-desc {
-            margin-bottom: 1.5rem;
-        }
-        
-        .book-btn {
-            display: inline-block;
-            padding: 0.6rem 1.2rem;
-            background-color: var(--primary-color);
-            color: var(--text-color);
-            text-decoration: none;
-            font-weight: bold;
-            border: 2px solid var(--border-color);
-            position: relative;
-            transition: transform 0.1s ease;
-        }
-        
-        .book-btn::after {
-            content: "";
-            position: absolute;
-            top: 4px;
-            left: 4px;
-            width: 100%;
-            height: 100%;
-            border: 2px solid var(--border-color);
-            z-index: -1;
-        }
-        
-        .book-btn:hover {
-            transform: translate(-2px, -2px);
-        }
-        
-        .book-btn:hover::after {
-            transform: translate(4px, 4px);
-        }
-        
-        /* About section */
-        .about {
-            padding: 4rem 0;
-        }
-        
-        .about-container {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 3rem;
-            align-items: start;
-        }
-        
-        .about-image {
-            border: 3px solid var(--border-color);
-            position: relative;
-        }
-        
-        .about-image::after {
-            content: "";
-            position: absolute;
-            top: 12px;
-            left: 12px;
-            width: 100%;
-            height: 100%;
-            background-color: var(--primary-color);
-            z-index: -1;
-        }
-        
-        .about-image img {
-            width: 100%;
-            display: block;
-        }
-        
-        .about-content h2 {
-            margin-bottom: 1.5rem;
-        }
-        
-        .about-content p {
-            margin-bottom: 1rem;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-        
-        .social-link {
-            width: 45px;
-            height: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--background-color);
-            border: 2px solid var(--border-color);
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 1.5rem;
-            position: relative;
-            transition: transform 0.1s ease;
-        }
-        
-        .social-link::after {
-            content: "";
-            position: absolute;
-            top: 4px;
-            left: 4px;
-            width: 100%;
-            height: 100%;
-            background-color: var(--primary-color);
-            z-index: -1;
-        }
-        
-        .social-link:hover {
-            transform: translate(-2px, -2px);
-        }
-        
-        .social-link:hover::after {
-            transform: translate(4px, 4px);
-        }
-        
-        /* Footer */
-        footer {
-            border-top: 3px solid var(--border-color);
-            padding: 2rem 0;
-            text-align: center;
-            background-color: var(--background-color);
-        }
-        
-        .footer-container {
+            border: 2px solid var(--text-color);
+            box-shadow: 6px 6px 0 var(--shadow-color);
+            padding: 20px;
+            transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
+        }
+
+        .book-card:hover {
+            transform: translate(-5px, -5px);
+            box-shadow: 10px 10px 0 var(--shadow-color);
+        }
+
+        .book-image {
+            aspect-ratio: 2/3;
+            width: 100%;
+            object-fit: cover;
+            border: 2px solid var(--text-color);
+            margin-bottom: 15px;
+        }
+
+        .book-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .book-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .book-meta span {
+            background-color: #f0f0f0;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .book-description {
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: var(--background-color);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .about-image {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border: 2px solid var(--text-color);
+            box-shadow: 6px 6px 0 var(--shadow-color);
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .social-link {
+            display: inline-flex;
             align-items: center;
-        }
-        
-        .footer-link {
+            justify-content: center;
+            padding: 10px;
+            background-color: var(--primary-color);
             color: var(--text-color);
-            text-decoration: none;
-            font-weight: bold;
-            margin: 0 1rem;
+            border: 2px solid var(--text-color);
+            box-shadow: 3px 3px 0 var(--shadow-color);
             transition: all 0.3s ease;
+            text-decoration: none;
         }
-        
-        .footer-link:hover {
-            color: var(--primary-hover);
+
+        .social-link:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 5px 5px 0 var(--shadow-color);
         }
-        
+
+        /* Footer */
+        footer {
+            background-color: var(--text-color);
+            color: var(--background-color);
+            padding: 50px 0;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: var(--primary-color);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            background-color: var(--primary-color);
+            bottom: 2px;
+            left: 0;
+            z-index: 0;
+        }
+
+        .footer-links {
+            list-style-type: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: var(--background-color);
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
         .copyright {
-            margin-top: 1.5rem;
+            margin-top: 50px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
         }
-        
-        /* Responsive styles */
+
+        /* Responsive Design */
         @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                flex-direction: column;
+                background-color: var(--background-color);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                z-index: 999;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-item {
+                margin: 20px 0;
+            }
+
             .mobile-menu-btn {
                 display: block;
             }
-            
-            nav {
-                position: fixed;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                background-color: var(--background-color);
-                border-bottom: 3px solid var(--border-color);
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.3s ease;
-            }
-            
-            nav.active {
-                max-height: 300px;
-            }
-            
-            nav ul {
-                flex-direction: column;
-                padding: 1rem;
-                gap: 1rem;
-            }
-            
+
             .hero h1 {
                 font-size: 2.5rem;
             }
-            
-            .about-container {
+
+            .about-content {
                 grid-template-columns: 1fr;
             }
-            
+
             .about-image {
                 max-width: 300px;
                 margin: 0 auto;
             }
         }
-        
+
         @media (max-width: 480px) {
             .hero h1 {
                 font-size: 2rem;
             }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .books-grid {
+
+            .book-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -525,157 +434,744 @@
 </head>
 <body>
     <header>
-        <div class="container header-container">
-            <a href="https://wildan.fauzy.eu.org" class="logo">
-                <div class="logo-icon">
-                    <img src="/logo.png" alt="wilfauzy">
+        <div class="container">
+            <nav>
+                <div class="logo-container">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <div class="icon-lines"></div>
+                            <div class="icon-lines"></div>
+                            <div class="icon-highlight"></div>
+                            <div class="icon-button"></div>
+                            <div class="icon-button"></div>
+                        </div>
+                    </div>
+                    <a href="#" class="logo-text">WilFauzy</a>
                 </div>
-                <div class="logo-text">WilFauzy</div>
-            </a>
-            
-            <button class="mobile-menu-btn" aria-label="Toggle menu">
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            <nav id="main-nav">
-                <ul>
-                    <li><a href="#buku">Buku</a></li>
-                    <li><a href="#tentang">Tentang</a></li>
-                    <li><a href="#footer">Ikuti</a></li>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#buku" class="nav-link">Buku</a></li>
+                    <li class="nav-item"><a href="#tentang" class="nav-link">Tentang</a></li>
+                    <li class="nav-item"><a href="#footer" class="nav-link">Kontak</a></li>
                 </ul>
+                <button class="mobile-menu-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
             </nav>
         </div>
     </header>
-    
-    <main>
-        <section class="hero">
-            <div class="container">
-                <h1>
-                    <span>Wildan Fauzy - </span>
-                    <span class="highlight">Penulis amatir</span>
-                </h1>
-                <p>Penulis amatir dari Indonesia. Menulis novel, cerpen, dan esai. Lahir di Cirebon, Jawa Barat, Indonesia.</p>
-                <a href="#buku" class="hero-btn">Lihat Karya</a>
-            </div>
-        </section>
-        
-        <section id="buku" class="books">
-            <div class="container">
-                <h2 class="section-title">Buku</h2>
-                <div class="books-grid">
-                    <div class="book-card">
-                        <img src="/kandang-babi.jpg" alt="Kandang Babi" class="book-img">
-                        <div class="book-info">
-                            <h3 class="book-title">Kandang Babi</h3>
-                            <div class="book-meta">
-                                <span><strong>Penerbit:</strong> Guepedia Publisher</span>
-                                <span><strong>ISBN:</strong> 9786024430986</span>
-                                <span><strong>Tahun Terbit:</strong> 2017</span>
-                                <span><strong>Halaman:</strong> 192</span>
-                            </div>
-                            <p class="book-desc">Kandang babi hanya julukan sebuah tempat tinggal, Benda mati dan juga tidak bernapas, tetapi mempunyai nama, perkenalkan namanya adalah "Kandang Babi", dia tidak ingin nama yang lain, tidak ada yang tahu dari mana namanya berasal, dan juga tidak mempunyai silsilah keluarga, muncul dengan sendirinya, dan perlu diingat ini bukan kandang babi yang kalian kira.</p>
-                            <a href="#" class="book-btn">Baca Selengkapnya</a>
-                        </div>
+
+    <section class="hero">
+        <div class="container">
+            <h1>
+                <span>Wildan </span>
+                <span class="highlight">Fauzy</span>
+            </h1>
+            <p>Penulis amatir dari Indonesia. Menulis novel, cerpen, dan esai. Lahir di Cirebon, Jawa Barat, Indonesia.</p>
+            <a href="#buku" class="btn">Lihat Buku</a>
+            <a href="#tentang" class="btn btn-outline">Tentang Penulis</a>
+        </div>
+    </section>
+
+    <section id="buku" class="books">
+        <div class="container">
+            <h2 class="section-title">Buku</h2>
+            <div class="book-grid">
+                <div class="book-card">
+                    <img src="/api/placeholder/400/600" alt="Kandang Babi" class="book-image">
+                    <h3 class="book-title">Kandang Babi</h3>
+                    <div class="book-meta">
+                        <span>Novel</span>
+                        <span>2017</span>
+                        <span>192 Halaman</span>
                     </div>
-                    
-                    <div class="book-card">
-                        <img src="/anak-babi.jpg" alt="Anak Babi" class="book-img">
-                        <div class="book-info">
-                            <h3 class="book-title">Anak Babi</h3>
-                            <div class="book-meta">
-                                <span><strong>Penerbit:</strong> Guepedia Publisher</span>
-                                <span><strong>ISBN:</strong> 9786237391449</span>
-                                <span><strong>Tahun Terbit:</strong> 2019</span>
-                                <span><strong>Halaman:</strong> 90</span>
-                            </div>
-                            <p class="book-desc">Anak babi sekumpulan cerita adalah kumpulan tulisan dari penulis sendiri yang masih berceceran, dikumpulkan tulisan tersebut menjadikan judul "Anak babi sekumpulan cerita" merupakan catatan dari berbagai kisah pengalaman suka duka dan cinta dirangkum dalam buku ini.</p>
-                            <a href="#" class="book-btn">Baca Selengkapnya</a>
-                        </div>
+                    <div class="book-description">
+                        <p>Kandang babi hanya julukan sebuah tempat tinggal, Benda mati dan juga tidak bernapas, tetapi mempunyai nama, perkenalkan namanya adalah "Kandang Babi", dia tidak ingin nama yang lain, tidak ada yang tahu dari mana namanya berasal, dan juga tidak mempunyai silsilah keluarga, muncul dengan sendirinya, dan perlu diingat ini bukan kandang babi yang kalian kira.</p>
+                    </div>
+                    <div class="book-info">
+                        <p><strong>Penerbit:</strong> Guepedia Publisher</p>
+                        <p><strong>ISBN:</strong> 9786024430986</p>
+                    </div>
+                </div>
+
+                <div class="book-card">
+                    <img src="/api/placeholder/400/600" alt="Anak Babi" class="book-image">
+                    <h3 class="book-title">Anak Babi</h3>
+                    <div class="book-meta">
+                        <span>Kumpulan Cerpen</span>
+                        <span>2019</span>
+                        <span>90 Halaman</span>
+                    </div>
+                    <div class="book-description">
+                        <p>Anak babi sekumpulan cerita adalah kumpulan tulisan dari penulis sendiri yang masih berceceran, dikumpulkan tulisan tersebut menjadikan judul "Anak babi sekumpulan cerita" merupakan catatan dari berbagai kisah pengalaman suka duka dan cinta dirangkum dalam buku ini.</p>
+                    </div>
+                    <div class="book-info">
+                        <p><strong>Penerbit:</strong> Guepedia Publisher</p>
+                        <p><strong>ISBN:</strong> 9786237391449</p>
                     </div>
                 </div>
             </div>
-        </section>
-        
-        <section id="tentang" class="about">
-            <div class="container">
-                <h2 class="section-title">Tentang</h2>
-                <div class="about-container">
-                    <div class="about-image">
-                        <img src="/wildan-fauzy.jpg" alt="Wildan Fauzy">
-                    </div>
-                    <div class="about-content">
-                        <h2>Wildan Fauzy</h2>
-                        <p>Wildan Fauzy adalah seorang penulis dari Indonesia. Menulis novel, cerita pendek, esai. kandang babi dan anak babi merupakan kumpulan cerita.</p>
-                        <p>Wildan lahir di Cirebon, Jawa Barat, Indonesia, pada tanggal 26 Maret 1996. Dibesarkan di sebuah desa kecil, sekitar satu jam perjalanan dari kota Cirebon.</p>
-                        <p>Perjalanan menulis Wildan dimulai dengan cerita pendek dan esai, yang akhirnya membuahkan hasil berupa penerbitan novel pertamanya "Kandang Babi" pada tahun 2017, diikuti oleh kumpulan cerita pendek "Anak Babi" pada tahun 2019.</p>
-                        
-                        <div class="social-links">
-                            <a href="https://pinterest.com/wilfauzy" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
-                                <i class="fab fa-pinterest"></i>
-                            </a>
-                            <a href="https://instagram.com/wilfauzy" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="https://goodreads.com/author/show/19306620.Wildan_Fauzy" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Goodreads">
-                                <i class="fab fa-goodreads-g"></i>
-                            </a>
-                            <a href="mailto:wildan@fauzy.eu.org" class="social-link" aria-label="Email">
-                                <i class="fas fa-envelope"></i>
-                            </a>
-                        </div>
+        </div>
+    </section>
+
+    <section id="tentang" class="about">
+        <div class="container">
+            <h2 class="section-title">Tentang Penulis</h2>
+            <div class="about-content">
+                <img src="/api/placeholder/400/400" alt="Wildan Fauzy" class="about-image">
+                <div class="about-text">
+                    <h2>Wildan Fauzy</h2>
+                    <p>Wildan Fauzy adalah seorang penulis dari Indonesia. Menulis novel, cerita pendek, esai. Kandang babi dan anak babi merupakan kumpulan cerita.</p>
+                    <p>Wildan lahir di Cirebon, Jawa Barat, Indonesia, pada tanggal 26 Maret 1996. Dibesarkan di sebuah desa kecil, sekitar satu jam perjalanan dari kota Cirebon.</p>
+                    <p>Perjalanan menulis Wildan dimulai dengan cerita pendek dan esai, yang akhirnya membuahkan hasil berupa penerbitan novel pertamanya "Kandang Babi" pada tahun 2017, diikuti oleh kumpulan cerita pendek "Anak Babi" pada tahun 2019.</p>
+                    <div class="social-links">
+                        <a href="https://pinterest.com/wilfauzy" class="social-link" target="_blank">Pinterest</a>
+                        <a href="https://instagram.com/wilfauzy" class="social-link" target="_blank">Instagram</a>
+                        <a href="https://goodreads.com/author/show/19306620.Wildan_Fauzy" class="social-link" target="_blank">Goodreads</a>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
-    
+        </div>
+    </section>
+
     <footer id="footer">
-        <div class="container footer-container">
-            <div>
-                <a href="#buku" class="footer-link">Buku</a>
-                <a href="#tentang" class="footer-link">Tentang</a>
-                <a href="#footer" class="footer-link">Ikuti</a>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Navigasi</h3>
+                    <ul class="footer-links">
+                        <li><a href="#buku">Buku</a></li>
+                        <li><a href="#tentang">Tentang</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Kontak</h3>
+                    <ul class="footer-links">
+                        <li>Email: wildan@fauzy.eu.org</li>
+                        <li><a href="https://pinterest.com/wilfauzy" target="_blank">Pinterest</a></li>
+                        <li><a href="https://instagram.com/wilfauzy" target="_blank">Instagram</a></li>
+                        <li><a href="https://goodreads.com/author/show/19306620.Wildan_Fauzy" target="_blank">Goodreads</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Karya</h3>
+                    <ul class="footer-links">
+                        <li>Kandang Babi (Novel, 2017)</li>
+                        <li>Anak Babi (Kumpulan Cerpen, 2019)</li>
+                    </ul>
+                </div>
             </div>
             <div class="copyright">
-                &copy; <span id="current-year">2023</span> Wildan Fauzy. All rights reserved.
+                <p>&copy; 2025 Wildan Fauzy. All rights reserved.</p>
             </div>
         </div>
     </footer>
-    
+
     <script>
-        // Set current year in footer
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-        
-        // Mobile menu toggle
+        // Mobile Menu Toggle
         const menuBtn = document.querySelector('.mobile-menu-btn');
-        const mainNav = document.getElementById('main-nav');
-        
+        const navMenu = document.querySelector('.nav-menu');
+
         menuBtn.addEventListener('click', () => {
-            mainNav.classList.toggle('active');
+            navMenu.classList.toggle('active');
         });
-        
-        // Close menu when clicking a link
-        const navLinks = document.querySelectorAll('nav a');
-        navLinks.forEach(link => {
+
+        // Close menu when clicking a nav link
+        document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', () => {
-                mainNav.classList.remove('active');
+                navMenu.classList.remove('active');
             });
         });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 90,
-                        behavior: 'smooth'
-                    });
-                }
+    </script>
+</body>
+</html>v<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Penulis amatir dari Indonesia. Menulis novel, cerpen, dan esai. Lahir di Cirebon, Jawa Barat, Indonesia.">
+    <title>Wildan Fauzy - Penulis Amatir</title>
+    <style>
+        :root {
+            --primary-color: #FFDD00;
+            --text-color: #16161D;
+            --background-color: #FFFFFF;
+            --line-color: #E5E5E5;
+            --shadow-color: rgba(0, 0, 0, 0.5);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            background-image: linear-gradient(var(--line-color) 1px, transparent 1px), 
+                              linear-gradient(90deg, var(--line-color) 1px, transparent 1px);
+            background-size: 50px 50px;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--background-color);
+            border-bottom: 2px solid var(--text-color);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: #fff;
+            border: 2px solid var(--text-color);
+            display: flex;
+            flex-direction: column;
+            padding: 5px;
+            box-shadow: 4px 4px 0 var(--shadow-color);
+        }
+
+        .logo-icon .icon-lines {
+            height: 2px;
+            background-color: var(--text-color);
+            margin: 2px 0;
+            width: 80%;
+        }
+
+        .logo-icon .icon-button {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--text-color);
+            margin: 2px;
+        }
+
+        .logo-icon .icon-highlight {
+            width: 60%;
+            height: 8px;
+            background-color: var(--primary-color);
+            margin-top: 2px;
+        }
+
+        .logo-text {
+            font-size: 2rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: var(--text-color);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style-type: none;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-color);
+            padding: 10px 15px;
+            font-weight: bold;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero h1 span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 span.highlight {
+            color: var(--text-color);
+            background-color: var(--primary-color);
+            padding: 0 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: bold;
+            border: 2px solid var(--text-color);
+            box-shadow: 4px 4px 0 var(--shadow-color);
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+
+        .btn:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0 var(--shadow-color);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-color);
+        }
+
+        /* Book Section */
+        .books {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 8px;
+            background-color: var(--primary-color);
+            bottom: 5px;
+            left: 0;
+            z-index: -1;
+        }
+
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .book-card {
+            background-color: var(--background-color);
+            border: 2px solid var(--text-color);
+            box-shadow: 6px 6px 0 var(--shadow-color);
+            padding: 20px;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .book-card:hover {
+            transform: translate(-5px, -5px);
+            box-shadow: 10px 10px 0 var(--shadow-color);
+        }
+
+        .book-image {
+            aspect-ratio: 2/3;
+            width: 100%;
+            object-fit: cover;
+            border: 2px solid var(--text-color);
+            margin-bottom: 15px;
+        }
+
+        .book-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .book-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .book-meta span {
+            background-color: #f0f0f0;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .book-description {
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: var(--background-color);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .about-image {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border: 2px solid var(--text-color);
+            box-shadow: 6px 6px 0 var(--shadow-color);
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            border: 2px solid var(--text-color);
+            box-shadow: 3px 3px 0 var(--shadow-color);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 5px 5px 0 var(--shadow-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-color);
+            color: var(--background-color);
+            padding: 50px 0;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: var(--primary-color);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            background-color: var(--primary-color);
+            bottom: 2px;
+            left: 0;
+            z-index: 0;
+        }
+
+        .footer-links {
+            list-style-type: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: var(--background-color);
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            margin-top: 50px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                flex-direction: column;
+                background-color: var(--background-color);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                z-index: 999;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-item {
+                margin: 20px 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .book-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo-container">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <div class="icon-lines"></div>
+                            <div class="icon-lines"></div>
+                            <div class="icon-highlight"></div>
+                            <div class="icon-button"></div>
+                            <div class="icon-button"></div>
+                        </div>
+                    </div>
+                    <a href="#" class="logo-text">Wildan Fauzy</a>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#buku" class="nav-link">Buku</a></li>
+                    <li class="nav-item"><a href="#tentang" class="nav-link">Tentang</a></li>
+                    <li class="nav-item"><a href="#footer" class="nav-link">Kontak</a></li>
+                </ul>
+                <button class="mobile-menu-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>
+                <span>Wildan </span>
+                <span class="highlight">Fauzy</span>
+            </h1>
+            <p>Penulis amatir dari Indonesia. Menulis novel, cerpen, dan esai. Lahir di Cirebon, Jawa Barat, Indonesia.</p>
+            <a href="#buku" class="btn">Lihat Buku</a>
+            <a href="#tentang" class="btn btn-outline">Tentang Penulis</a>
+        </div>
+    </section>
+
+    <section id="buku" class="books">
+        <div class="container">
+            <h2 class="section-title">Buku</h2>
+            <div class="book-grid">
+                <div class="book-card">
+                    <img src="/api/placeholder/400/400" alt="Kandang Babi" class="book-image">
+                    <h3 class="book-title">Kandang Babi</h3>
+                    <div class="book-meta">
+                        <span>Novel</span>
+                        <span>2017</span>
+                        <span>192 Halaman</span>
+                    </div>
+                    <div class="book-description">
+                        <p>Kandang babi hanya julukan sebuah tempat tinggal, Benda mati dan juga tidak bernapas, tetapi mempunyai nama, perkenalkan namanya adalah "Kandang Babi", dia tidak ingin nama yang lain, tidak ada yang tahu dari mana namanya berasal, dan juga tidak mempunyai silsilah keluarga, muncul dengan sendirinya, dan perlu diingat ini bukan kandang babi yang kalian kira.</p>
+                    </div>
+                    <div class="book-info">
+                        <p><strong>Penerbit:</strong> Guepedia Publisher</p>
+                        <p><strong>ISBN:</strong> 9786024430986</p>
+                    </div>
+                </div>
+
+                <div class="book-card">
+                    <img src="/api/placeholder/400/600" alt="Anak Babi" class="book-image">
+                    <h3 class="book-title">Anak Babi</h3>
+                    <div class="book-meta">
+                        <span>Kumpulan Cerpen</span>
+                        <span>2019</span>
+                        <span>90 Halaman</span>
+                    </div>
+                    <div class="book-description">
+                        <p>Anak babi sekumpulan cerita adalah kumpulan tulisan dari penulis sendiri yang masih berceceran, dikumpulkan tulisan tersebut menjadikan judul "Anak babi sekumpulan cerita" merupakan catatan dari berbagai kisah pengalaman suka duka dan cinta dirangkum dalam buku ini.</p>
+                    </div>
+                    <div class="book-info">
+                        <p><strong>Penerbit:</strong> Guepedia Publisher</p>
+                        <p><strong>ISBN:</strong> 9786237391449</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tentang" class="about">
+        <div class="container">
+            <h2 class="section-title">Tentang Penulis</h2>
+            <div class="about-content">
+                <img src="/api/placeholder/400/400" alt="Wildan Fauzy" class="about-image">
+                <div class="about-text">
+                    <h2>Wildan Fauzy</h2>
+                    <p>Wildan Fauzy adalah seorang penulis dari Indonesia. Menulis novel, cerita pendek, esai. Kandang babi dan anak babi merupakan kumpulan cerita.</p>
+                    <p>Wildan lahir di Cirebon, Jawa Barat, Indonesia, pada tanggal 26 Maret 1996. Dibesarkan di sebuah desa kecil, sekitar satu jam perjalanan dari kota Cirebon.</p>
+                    <p>Perjalanan menulis Wildan dimulai dengan cerita pendek dan esai, yang akhirnya membuahkan hasil berupa penerbitan novel pertamanya "Kandang Babi" pada tahun 2017, diikuti oleh kumpulan cerita pendek "Anak Babi" pada tahun 2019.</p>
+                    <div class="social-links">
+                        <a href="https://pinterest.com/wilfauzy" class="social-link" target="_blank">Pinterest</a>
+                        <a href="https://instagram.com/wilfauzy" class="social-link" target="_blank">Instagram</a>
+                        <a href="https://goodreads.com/author/show/19306620.Wildan_Fauzy" class="social-link" target="_blank">Goodreads</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Navigasi</h3>
+                    <ul class="footer-links">
+                        <li><a href="#buku">Buku</a></li>
+                        <li><a href="#tentang">Tentang</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Kontak</h3>
+                    <ul class="footer-links">
+                        <li>Email: wildan@fauzy.eu.org</li>
+                        <li><a href="https://pinterest.com/wilfauzy" target="_blank">Pinterest</a></li>
+                        <li><a href="https://instagram.com/wilfauzy" target="_blank">Instagram</a></li>
+                        <li><a href="https://goodreads.com/author/show/19306620.Wildan_Fauzy" target="_blank">Goodreads</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Karya</h3>
+                    <ul class="footer-links">
+                        <li>Kandang Babi (Novel, 2017)</li>
+                        <li>Anak Babi (Kumpulan Cerpen, 2019)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Wildan Fauzy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+
+        menuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking a nav link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
             });
         });
     </script>
