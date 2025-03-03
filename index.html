@@ -3,40 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixel Blog - Retro Style Writing</title>
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="A retro pixel-themed blog with original content and pixel art aesthetics">
-    <meta name="keywords" content="pixel art, retro blog, pixel blog, retro gaming, nostalgia">
-    <meta name="author" content="Your Name">
-    
-    <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Pixel Blog - Retro Style Writing">
-    <meta property="og:description" content="A retro pixel-themed blog with original content and pixel art aesthetics">
-    <meta property="og:image" content="/api/placeholder/1200/630">
-    <meta property="og:url" content="https://pixelblog.example.com">
-    <meta property="og:type" content="website">
+    <title>Wildan Fauzy - Penulis amatir</title>
+    <meta name="description" content="Wildan Fauzy is an author from Indonesia. Write novels, short stories, essays. Pig pen and piglet book a collection of stories.">
+    <meta name="keywords" content="Wildan Fauzy, Indonesian author, novelist, Kandang Babi, Anak Babi, Indonesian literature">
+    <meta name="author" content="Wildan Fauzy">
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEREQAAAAAAEAERAAAAAAABEBEAAAAAAAAREQAAAAAAABERAAAAAAAAEAEQAAAAAAABAREAAAAAAAABERAAAAAAAAAREAAAAAAAAAEQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">
     
     <style>
-        /* Global Styles and Variables */
+        /* Base styles and pixel font */
+        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+        
         :root {
-            --pixel-size: 2px;
-            --primary: #5df249;
-            --secondary: #49c2f2;
-            --dark: #2d3a4f;
-            --light: #f0f6fc;
-            --accent: #f249b8;
-            --font-pixel: 'Courier New', monospace;
+            --neon-pink: rgba(255, 105, 180, 0.85);
+            --neon-blue: rgba(30, 144, 255, 0.85);
+            --neon-green: rgba(50, 205, 50, 0.85);
+            --neon-yellow: rgba(255, 255, 0, 0.85);
+            --background: #1a1a2e;
+            --text-color: #e6e6fa;
         }
         
-        /* Custom Pixel Font */
-        @font-face {
-            font-family: 'PixelFont';
-            src: url('https://cdnjs.cloudflare.com/ajax/libs/PixelEmulator/1.0/PixelEmulator.ttf') format('truetype');
-            font-display: swap;
-        }
-        
-        /* Reset & Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -44,788 +29,452 @@
         }
         
         body {
-            font-family: var(--font-pixel);
-            background-color: var(--dark);
-            color: var(--light);
+            font-family: 'VT323', monospace;
+            background-color: var(--background);
+            color: var(--text-color);
             line-height: 1.6;
-            font-size: 16px;
-            background-image: 
-                linear-gradient(0deg, rgba(0,0,0,0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px);
-            background-size: 20px 20px;
-            image-rendering: pixelated;
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
         }
         
+        /* Pixelated elements */
         .pixel-border {
             position: relative;
-            border: var(--pixel-size) solid var(--light);
-            box-shadow: 
-                var(--pixel-size) var(--pixel-size) 0 0 var(--primary),
-                calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 0 var(--secondary);
-            padding: 15px;
-            margin: 15px 0;
+            border: 4px solid;
+            border-image-slice: 2;
+            border-image-width: 2;
+            border-image-repeat: stretch;
+            border-image-source: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="8" height="8" xmlns="http://www.w3.org/2000/svg"><path d="M3 1 h1 v1 h-1 z M4 1 h1 v1 h-1 z M2 2 h1 v1 h-1 z M5 2 h1 v1 h-1 z M1 3 h1 v1 h-1 z M6 3 h1 v1 h-1 z M1 4 h1 v1 h-1 z M6 4 h1 v1 h-1 z M2 5 h1 v1 h-1 z M5 5 h1 v1 h-1 z M3 6 h1 v1 h-1 z M4 6 h1 v1 h-1 z" fill="pink" /></svg>');
+            padding: 20px;
+            margin: 20px 0;
         }
         
-        /* Animation for Pixel Elements */
-        @keyframes pixel-float {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-            100% { transform: translateY(0); }
+        .pixel-button {
+            font-family: 'VT323', monospace;
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            background: var(--neon-blue);
+            color: white;
+            text-transform: uppercase;
+            font-size: 18px;
+            cursor: pointer;
+            position: relative;
+            clip-path: polygon(
+                0% 0%, 
+                100% 0%, 
+                100% 70%, 
+                90% 100%, 
+                0% 100%
+            );
+            transition: transform 0.2s, box-shadow 0.2s;
         }
         
-        /* Container */
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px 0;
+        .pixel-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 0 0 rgba(0,0,0,0.3);
         }
         
-        /* Header and Navigation */
+        /* Header style */
         header {
-            padding: 20px 0;
+            padding: 20px;
+            background-color: rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 10px var(--neon-blue), 
+                        0 0 20px var(--neon-pink);
         }
         
-        .site-logo {
+        .logo {
             display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
+            align-items: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            padding: 10px;
+            text-shadow: 3px 3px 0 rgba(0,0,0,0.5);
+            animation: glow 2s infinite alternate;
         }
         
         .logo-pixel {
-            font-family: 'PixelFont', var(--font-pixel);
-            font-size: 40px;
-            color: var(--primary);
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            text-shadow: 
-                3px 3px 0 var(--secondary),
-                6px 6px 0 rgba(0,0,0,0.2);
-            animation: pixel-float 3s ease-in-out infinite;
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 10 10'%3E%3Crect x='0' y='0' width='10' height='10' fill='%231a1a2e'/%3E%3Crect x='1' y='1' width='2' height='2' fill='%23ff69b4'/%3E%3Crect x='3' y='1' width='2' height='2' fill='%23ff69b4'/%3E%3Crect x='7' y='1' width='2' height='2' fill='%23ff69b4'/%3E%3Crect x='1' y='3' width='2' height='2' fill='%231e90ff'/%3E%3Crect x='5' y='3' width='2' height='2' fill='%231e90ff'/%3E%3Crect x='1' y='5' width='2' height='2' fill='%2332cd32'/%3E%3Crect x='3' y='5' width='2' height='2' fill='%2332cd32'/%3E%3Crect x='5' y='5' width='2' height='2' fill='%2332cd32'/%3E%3Crect x='7' y='5' width='2' height='2' fill='%2332cd32'/%3E%3Crect x='1' y='7' width='2' height='2' fill='%23ffff00'/%3E%3Crect x='7' y='7' width='2' height='2' fill='%23ffff00'/%3E%3C/svg%3E");
         }
         
         nav {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            margin-bottom: 30px;
+            gap: 10px;
+            margin-top: 10px;
         }
         
         nav a {
-            color: var(--light);
             text-decoration: none;
+            color: white;
+            font-size: 20px;
             padding: 8px 15px;
-            margin: 0 5px 10px;
-            font-weight: bold;
-            background-color: var(--dark);
-            border: 2px solid var(--primary);
-            box-shadow: 3px 3px 0 var(--secondary);
-            transition: all 0.2s ease;
+            position: relative;
+            transition: all 0.3s ease;
+            background-color: var(--neon-green);
+            clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
         }
         
         nav a:hover {
-            transform: translate(-2px, -2px);
-            box-shadow: 5px 5px 0 var(--secondary);
-            background-color: var(--primary);
-            color: var(--dark);
+            background-color: var(--neon-yellow);
+            transform: translateY(-3px);
         }
         
-        /* Cover Section */
-        .cover {
+        /* Hero section */
+        .hero {
+            min-height: 60vh;
             position: relative;
-            height: 400px;
-            margin-bottom: 40px;
-            overflow: hidden;
-            background-color: var(--dark);
-        }
-        
-        .cover img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            filter: brightness(0.7) contrast(1.2);
-            image-rendering: pixelated;
-        }
-        
-        .cover-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            width: 80%;
-            padding: 20px;
-            background-color: rgba(45, 58, 79, 0.8);
-            border: var(--pixel-size) solid var(--primary);
-        }
-        
-        .cover-text h1 {
-            font-family: 'PixelFont', var(--font-pixel);
-            font-size: 36px;
-            color: var(--primary);
-            margin-bottom: 15px;
-            text-shadow: 3px 3px 0 var(--secondary);
-        }
-        
-        .cover-text p {
-            font-size: 18px;
-            color: var(--light);
-        }
-        
-        /* Main Content Area */
-        .content-wrapper {
             display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-        
-        main {
-            flex: 1 1 65%;
-            min-width: 300px;
-        }
-        
-        /* Blog Post Styles */
-        .post {
-            margin-bottom: 50px;
-        }
-        
-        .post-header {
-            margin-bottom: 20px;
-        }
-        
-        .post-title {
-            font-family: 'PixelFont', var(--font-pixel);
-            font-size: 28px;
-            color: var(--primary);
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 0 var(--secondary);
-        }
-        
-        .post-meta {
-            font-size: 14px;
-            color: var(--secondary);
-        }
-        
-        .post-content {
-            background-color: rgba(240, 246, 252, 0.05);
-            padding: 20px;
-            border: var(--pixel-size) solid var(--light);
-            box-shadow: 
-                var(--pixel-size) var(--pixel-size) 0 0 var(--primary),
-                calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 0 var(--secondary);
-        }
-        
-        .post-content p {
-            margin-bottom: 20px;
-        }
-        
-        .post-content img {
-            max-width: 100%;
-            height: auto;
-            margin: 20px 0;
-            image-rendering: pixelated;
-        }
-        
-        .read-more {
-            display: inline-block;
-            padding: 8px 15px;
-            background-color: var(--primary);
-            color: var(--dark);
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 15px;
-            border: 2px solid var(--dark);
-            box-shadow: 3px 3px 0 var(--secondary);
-            transition: all 0.2s ease;
-        }
-        
-        .read-more:hover {
-            transform: translate(-2px, -2px);
-            box-shadow: 5px 5px 0 var(--secondary);
-        }
-        
-        /* Sidebar */
-        aside {
-            flex: 1 1 25%;
-            min-width: 250px;
-        }
-        
-        .sidebar-widget {
-            margin-bottom: 40px;
-        }
-        
-        .widget-title {
-            font-family: 'PixelFont', var(--font-pixel);
-            font-size: 22px;
-            color: var(--primary);
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 0 var(--secondary);
-            padding-bottom: 5px;
-            border-bottom: 3px dashed var(--primary);
-        }
-        
-        .sidebar-content {
-            padding: 15px;
-            background-color: rgba(240, 246, 252, 0.05);
-            border: var(--pixel-size) solid var(--light);
-        }
-        
-        .categories li {
-            list-style-type: none;
-            margin-bottom: 10px;
-            padding-left: 15px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background: url('/api/placeholder/800/600') no-repeat center center;
+            background-size: cover;
             position: relative;
         }
         
-        .categories li::before {
-            content: "►";
-            color: var(--primary);
+        .hero::before {
+            content: '';
             position: absolute;
+            top: 0;
             left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1;
         }
         
-        .categories a {
-            color: var(--light);
-            text-decoration: none;
-            transition: color 0.2s ease;
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
         }
         
-        .categories a:hover {
-            color: var(--primary);
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px var(--neon-pink), 
+                        0 0 20px var(--neon-pink);
+            animation: textGlow 1.5s infinite alternate;
         }
         
-        .recent-posts li {
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        /* Books section */
+        .books {
+            padding: 40px 20px;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 40px;
+            text-shadow: 0 0 8px var(--neon-blue), 
+                        0 0 15px var(--neon-blue);
+        }
+        
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .book-card {
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(26, 26, 46, 0.8);
+            border-radius: 5px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            border: 2px solid var(--neon-pink);
+            box-shadow: 0 0 10px var(--neon-blue);
+        }
+        
+        .book-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 15px var(--neon-pink), 
+                        0 0 25px var(--neon-green);
+        }
+        
+        .book-cover {
+            height: 200px;
+            background: url('/api/placeholder/300/200') no-repeat center;
+            background-size: cover;
+            image-rendering: pixelated;
+        }
+        
+        .book-info {
+            padding: 20px;
+        }
+        
+        .book-title {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: var(--neon-yellow);
+        }
+        
+        .book-meta {
+            font-size: 0.9rem;
             margin-bottom: 15px;
-            list-style-type: none;
-            border-bottom: 1px dashed var(--secondary);
-            padding-bottom: 10px;
+            color: var(--neon-green);
         }
         
-        .recent-posts a {
-            color: var(--light);
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.2s ease;
+        .book-synopsis {
+            font-size: 1rem;
+            margin-bottom: 20px;
         }
         
-        .recent-posts a:hover {
-            color: var(--primary);
+        /* About section */
+        .about {
+            padding: 40px 20px;
+            background-color: rgba(0, 0, 0, 0.3);
         }
         
-        .recent-posts .post-date {
-            font-size: 12px;
-            color: var(--secondary);
-            display: block;
-            margin-top: 5px;
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2rem;
         }
         
         /* Footer */
         footer {
-            margin-top: 50px;
-            padding: 30px 0;
-            background-color: rgba(0, 0, 0, 0.2);
-            border-top: var(--pixel-size) solid var(--primary);
-        }
-        
-        .footer-content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 30px;
-        }
-        
-        .footer-section {
-            flex: 1 1 30%;
-            min-width: 250px;
-        }
-        
-        .footer-logo {
-            font-family: 'PixelFont', var(--font-pixel);
-            font-size: 24px;
-            color: var(--primary);
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 0 var(--secondary);
-        }
-        
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-icons a {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background-color: var(--dark);
-            border: 2px solid var(--primary);
-            color: var(--light);
+            padding: 30px 20px;
+            background-color: rgba(0,0,0,0.7);
             text-align: center;
-            line-height: 36px;
-            font-size: 20px;
-            box-shadow: 2px 2px 0 var(--secondary);
-            transition: all 0.2s ease;
+            border-top: 3px solid var(--neon-blue);
         }
         
-        .social-icons a:hover {
-            transform: translate(-2px, -2px);
-            box-shadow: 4px 4px 0 var(--secondary);
-            background-color: var(--primary);
-            color: var(--dark);
-        }
-        
-        .footer-links li {
-            list-style-type: none;
-            margin-bottom: 10px;
-        }
-        
-        .footer-links a {
-            color: var(--light);
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-        
-        .footer-links a:hover {
-            color: var(--primary);
-        }
-        
-        .copyright {
-            text-align: center;
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px dashed var(--secondary);
-            font-size: 14px;
-        }
-        
-        /* New Post Form */
-        .post-form {
-            margin-bottom: 50px;
-        }
-        
-        .form-group {
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
             margin-bottom: 20px;
         }
         
-        .form-group label {
+        .social-icon {
             display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: var(--primary);
+            width: 40px;
+            height: 40px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            transition: transform 0.3s ease;
         }
         
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 10px;
-            background-color: var(--dark);
-            border: 2px solid var(--light);
-            color: var(--light);
-            font-family: var(--font-pixel);
-            font-size: 16px;
+        .social-icon:hover {
+            transform: scale(1.2);
         }
         
-        .form-group textarea {
-            min-height: 200px;
-            resize: vertical;
+        .facebook {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 8 8'%3E%3Crect width='8' height='8' fill='%231e90ff'/%3E%3Cpath d='M5 1 H3 V3 H1 V5 H3 V7 H5 V5 H7 V3 H5 Z' fill='white'/%3E%3C/svg%3E");
         }
         
-        .form-button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: var(--primary);
-            color: var(--dark);
-            border: none;
-            font-family: var(--font-pixel);
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 3px 3px 0 var(--secondary);
-            transition: all 0.2s ease;
-            border: 2px solid var(--dark);
+        .instagram {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 8 8'%3E%3Crect width='8' height='8' fill='%23ff69b4'/%3E%3Crect x='1' y='1' width='6' height='6' fill='none' stroke='white' stroke-width='1'/%3E%3Ccircle cx='4' cy='4' r='1.5' fill='white'/%3E%3Ccircle cx='6' cy='2' r='0.5' fill='white'/%3E%3C/svg%3E");
         }
         
-        .form-button:hover {
-            transform: translate(-2px, -2px);
-            box-shadow: 5px 5px 0 var(--secondary);
+        .pinterest {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 8 8'%3E%3Crect width='8' height='8' fill='%23e60023'/%3E%3Ccircle cx='4' cy='4' r='3' fill='white'/%3E%3Ccircle cx='4' cy='4' r='2' fill='%23e60023'/%3E%3C/svg%3E");
         }
         
-        /* Mobile Responsive Styles */
+        .goodreads {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 8 8'%3E%3Crect width='8' height='8' fill='%23553b08'/%3E%3Cpath d='M2 2 H6 V3 H2 Z M2 4 H6 V5 H2 Z M2 6 H6 V7 H2 Z' fill='white'/%3E%3C/svg%3E");
+        }
+        
+        .copyright {
+            font-size: 1rem;
+        }
+        
+        /* Animations */
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px var(--neon-pink), 
+                            0 0 10px var(--neon-pink);
+            }
+            to {
+                text-shadow: 0 0 10px var(--neon-pink), 
+                            0 0 20px var(--neon-pink),
+                            0 0 30px var(--neon-pink);
+            }
+        }
+        
+        @keyframes textGlow {
+            from {
+                text-shadow: 0 0 5px var(--neon-blue), 
+                            0 0 10px var(--neon-blue);
+            }
+            to {
+                text-shadow: 0 0 10px var(--neon-green), 
+                            0 0 20px var(--neon-green),
+                            0 0 30px var(--neon-green);
+            }
+        }
+        
+        @keyframes pixelate {
+            0% {
+                background-size: 100% 100%;
+            }
+            50% {
+                background-size: 105% 105%;
+            }
+            100% {
+                background-size: 100% 100%;
+            }
+        }
+        
+        /* Responsive design */
         @media (max-width: 768px) {
-            .logo-pixel {
-                font-size: 32px;
+            .hero h1 {
+                font-size: 2.2rem;
             }
             
-            nav a {
-                margin-bottom: 10px;
+            .hero p {
+                font-size: 1.2rem;
             }
             
-            .cover {
-                height: 300px;
+            .section-title {
+                font-size: 2rem;
             }
             
-            .cover-text h1 {
-                font-size: 28px;
+            .book-grid {
+                grid-template-columns: 1fr;
             }
             
-            .cover-text p {
-                font-size: 16px;
+            .social-links {
+                flex-wrap: wrap;
             }
-            
-            .post-title {
-                font-size: 24px;
-            }
-            
-            .content-wrapper {
-                flex-direction: column;
-            }
-            
-            .footer-content {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            .footer-section {
-                padding-bottom: 20px;
-                border-bottom: 1px dashed var(--secondary);
-            }
-            
-            .footer-section:last-child {
-                border-bottom: none;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .logo-pixel {
-                font-size: 28px;
-            }
-            
-            .cover {
-                height: 250px;
-            }
-            
-            .cover-text h1 {
-                font-size: 24px;
-            }
-            
-            .cover-text p {
-                font-size: 14px;
-            }
-            
-            .post-title {
-                font-size: 22px;
-            }
-            
-            .container {
-                width: 95%;
-            }
-        }
-        
-        /* Pixel art social media icons */
-        .pixel-icon {
-            display: inline-block;
-            width: 24px;
-            height: 24px;
-            background-color: var(--light);
-            position: relative;
-            image-rendering: pixelated;
-        }
-        
-        /* Twitter/X pixel icon */
-        .pixel-icon.twitter::before {
-            content: "";
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background-color: var(--dark);
-            box-shadow: 
-                4px 0 0 var(--dark),
-                8px 0 0 var(--dark),
-                12px 0 0 var(--dark),
-                16px 0 0 var(--dark),
-                20px 0 0 var(--dark),
-                0 4px 0 var(--dark),
-                8px 4px 0 var(--dark),
-                12px 4px 0 var(--dark),
-                20px 4px 0 var(--dark),
-                0 8px 0 var(--dark),
-                4px 8px 0 var(--dark),
-                8px 8px 0 var(--dark),
-                16px 8px 0 var(--dark),
-                20px 8px 0 var(--dark),
-                0 12px 0 var(--dark),
-                8px 12px 0 var(--dark),
-                16px 12px 0 var(--dark),
-                20px 12px 0 var(--dark),
-                0 16px 0 var(--dark),
-                4px 16px 0 var(--dark),
-                8px 16px 0 var(--dark),
-                12px 16px 0 var(--dark),
-                16px 16px 0 var(--dark),
-                20px 16px 0 var(--dark),
-                0 20px 0 var(--dark),
-                20px 20px 0 var(--dark);
-        }
-        
-        /* Facebook pixel icon */
-        .pixel-icon.facebook::before {
-            content: "";
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background-color: var(--dark);
-            box-shadow: 
-                4px 0 0 var(--dark),
-                8px 0 0 var(--dark),
-                12px 0 0 var(--dark),
-                16px 0 0 var(--dark),
-                0 4px 0 var(--dark),
-                16px 4px 0 var(--dark),
-                0 8px 0 var(--dark),
-                4px 8px 0 var(--dark),
-                8px 8px 0 var(--dark),
-                12px 8px 0 var(--dark),
-                16px 8px 0 var(--dark),
-                0 12px 0 var(--dark),
-                16px 12px 0 var(--dark),
-                0 16px 0 var(--dark),
-                16px 16px 0 var(--dark),
-                0 20px 0 var(--dark),
-                4px 20px 0 var(--dark),
-                8px 20px 0 var(--dark),
-                12px 20px 0 var(--dark),
-                16px 20px 0 var(--dark);
-        }
-        
-        /* Instagram pixel icon */
-        .pixel-icon.instagram::before {
-            content: "";
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background-color: var(--dark);
-            box-shadow: 
-                4px 0 0 var(--dark),
-                8px 0 0 var(--dark),
-                12px 0 0 var(--dark),
-                16px 0 0 var(--dark),
-                0 4px 0 var(--dark),
-                16px 4px 0 var(--dark),
-                0 8px 0 var(--dark),
-                8px 8px 0 var(--dark),
-                16px 8px 0 var(--dark),
-                0 12px 0 var(--dark),
-                8px 12px 0 var(--dark),
-                16px 12px 0 var(--dark),
-                0 16px 0 var(--dark),
-                16px 16px 0 var(--dark),
-                0 20px 0 var(--dark),
-                4px 20px 0 var(--dark),
-                8px 20px 0 var(--dark),
-                12px 20px 0 var(--dark),
-                16px 20px 0 var(--dark);
-        }
-        
-        /* YouTube pixel icon */
-        .pixel-icon.youtube::before {
-            content: "";
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background-color: var(--dark);
-            box-shadow: 
-                4px 0 0 var(--dark),
-                8px 0 0 var(--dark),
-                12px 0 0 var(--dark),
-                16px 0 0 var(--dark),
-                0 4px 0 var(--dark),
-                8px 4px 0 var(--dark),
-                16px 4px 0 var(--dark),
-                0 8px 0 var(--dark),
-                8px 8px 0 var(--dark),
-                16px 8px 0 var(--dark),
-                0 12px 0 var(--dark),
-                8px 12px 0 var(--dark),
-                16px 12px 0 var(--dark),
-                0 16px 0 var(--dark),
-                16px 16px 0 var(--dark),
-                0 20px 0 var(--dark),
-                4px 20px 0 var(--dark),
-                8px 20px 0 var(--dark),
-                12px 20px 0 var(--dark),
-                16px 20px 0 var(--dark);
-        }
-        
-        /* Animation for post hover */
-        .post:hover .post-title {
-            animation: pixel-float 2s ease-in-out infinite;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="site-logo">
-                <div class="logo-pixel">Pixel Blog</div>
-            </div>
-            <nav>
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Categories</a>
-                <a href="#">New Post</a>
-                <a href="#">Contact</a>
-            </nav>
-        </header>
-        
-        <section class="cover">
-            <img src="/api/placeholder/1200/400" alt="Pixel Blog Cover">
-            <div class="cover-text">
-                <h1>Welcome to Pixel Blog</h1>
-                <p>A retro-styled space for your thoughts, stories, and pixel art adventures.</p>
-            </div>
-        </section>
-        
-        <div class="content-wrapper">
-            <main>
-                <section class="post-form pixel-border">
-                    <h2 class="post-title">Create a New Blog Post</h2>
-                    <form>
-                        <div class="form-group">
-                            <label for="post-title">Post Title</label>
-                            <input type="text" id="post-title" name="post-title" placeholder="Enter your post title">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="post-category">Category</label>
-                            <select id="post-category" name="post-category">
-                                <option value="">Select a category</option>
-                                <option value="pixel-art">Pixel Art</option>
-                                <option value="retro-gaming">Retro Gaming</option>
-                                <option value="tutorials">Tutorials</option>
-                                <option value="personal">Personal</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="post-cover">Cover Image URL</label>
-                            <input type="text" id="post-cover" name="post-cover" placeholder="Enter image URL or upload">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="post-content">Content</label>
-                            <textarea id="post-content" name="post-content" placeholder="Write your blog post here..."></textarea>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="post-tags">Tags (comma separated)</label>
-                            <input type="text" id="post-tags" name="post-tags" placeholder="pixel art, retro, tutorial">
-                        </div>
-                        
-                        <button type="submit" class="form-button">Publish Post</button>
-                    </form>
-                </section>
-                
-                <div class="post">
-                    <div class="post-header">
-                        <h2 class="post-title">The Art of Pixel Design</h2>
-                        <div class="post-meta">Posted on March 2, 2025 | Category: Pixel Art</div>
-                    </div>
-                    <div class="post-content">
-                        <p>Pixel art has been making a comeback in recent years, with many indie games and digital artists embracing the retro aesthetic. From its humble beginnings in early video games to the sophisticated pixel art we see today, this art form has evolved while maintaining its characteristic charm.</p>
-                        <img src="/api/placeholder/800/400" alt="Pixel Art Example">
-                        <p>Creating good pixel art requires attention to detail and an understanding of the limitations and strengths of the medium. Unlike other digital art forms, pixel art is created pixel by pixel, with each dot carefully placed to contribute to the whole image.</p>
-                        <a href="#" class="read-more">Read More</a>
-                    </div>
-                </div>
-                
-                <div class="post">
-                    <div class="post-header">
-                        <h2 class="post-title">Retro Gaming Classics That Still Hold Up</h2>
-                        <div class="post-meta">Posted on March 1, 2025 | Category: Retro Gaming</div>
-                    </div>
-                    <div class="post-content">
-                        <p>Despite the advancement in gaming technology, many retro games from the 80s and 90s still provide an enjoyable gaming experience. These classics have stood the test of time due to their innovative gameplay, memorable characters, and timeless design principles.</p>
-                        <img src="/api/placeholder/800/400" alt="Retro Gaming Classics">
-                        <p>From platformers like Super Mario Bros. to RPGs like Chrono Trigger, these games laid the foundation for modern gaming while working within the technical constraints of their time. What makes these games still relevant today?</p>
-                        <a href="#" class="read-more">Read More</a>
-                    </div>
-                </div>
-            </main>
-            
-            <aside>
-                <div class="sidebar-widget">
-                    <h3 class="widget-title">Categories</h3>
-                    <div class="sidebar-content">
-                        <ul class="categories">
-                            <li><a href="#">Pixel Art</a></li>
-                            <li><a href="#">Retro Gaming</a></li>
-                            <li><a href="#">Tutorials</a></li>
-                            <li><a href="#">Personal</a></li>
-                            <li><a href="#">Technology</a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="sidebar-widget">
-                    <h3 class="widget-title">Recent Posts</h3>
-                    <div class="sidebar-content">
-                        <ul class="recent-posts">
-                            <li>
-                                <a href="#">The Art of Pixel Design</a>
-                                <span class="post-date">March 2, 2025</span>
-                            </li>
-                            <li>
-                                <a href="#">Retro Gaming Classics That Still Hold Up</a>
-                                <span class="post-date">March 1, 2025</span>
-                            </li>
-                            <li>
-                                <a href="#">Getting Started with Pixel Art: Tools and Techniques</a>
-                                <span class="post-date">February 28, 2025</span>
-                            </li>
-                            <li>
-                                <a href="#">The Evolution of 8-bit Music</a>
-                                <span class="post-date">February 25, 2025</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="sidebar-widget">
-                    <h3 class="widget-title">About</h3>
-                    <div class="sidebar-content">
-                        <p>Pixel Blog is a space dedicated to all things retro, pixelated, and nostalgic. Join us as we explore the art, games, and culture of the pixel realm.</p>
-                    </div>
-                </div>
-            </aside>
+    <header>
+        <div class="logo">
+            <div class="logo-pixel"></div>
+            <span>Wildan Fauzy</span>
         </div>
-        
-        <footer>
-            <div class="footer-content container">
-                <div class="footer-section">
-                    <div class="footer-logo">Pixel Blog</div>
-                    <p>A retro-styled space for your thoughts, stories, and pixel art adventures.</p>
-                    <div class="social-icons">
-                        <a href="#"><div class="pixel-icon twitter"></div></a>
-                        <a href="#"><div class="pixel-icon facebook"></div></a>
-                        <a href="#"><div class="pixel-icon instagram"></div></a>
-                        <a href="#"><div class="pixel-icon youtube"></div></a>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#books">Books</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+    
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Wildan Fauzy</h1>
+            <p class="pixel-border">Penulis amatir dari Indonesia. Penulis novel, cerita pendek, dan esai.</p>
+            <a href="#books" class="pixel-button">View Books</a>
+        </div>
+    </section>
+    
+    <section id="books" class="books">
+        <h2 class="section-title">My Books</h2>
+        <div class="book-grid">
+            <div class="book-card">
+                <div class="book-cover"></div>
+                <div class="book-info">
+                    <h3 class="book-title">Kandang Babi</h3>
+                    <div class="book-meta">
+                        Novel | Guepedia | 2017<br>
+                        ISBN: 9786024430986 | 192 pages
                     </div>
+                    <p class="book-synopsis">
+                        Kandang babi hanya julukan sebuah tempat tinggal, Benda mati dan juga tidak bernapas, tetapi mempunyai nama, perkenalkan namanya adalah "Kandang Babi", dia tidak ingin nama yang lain, tidak ada yang tahu dari mana namanya berasal, dan juga tidak mempunyai silsilah keluarga, muncul dengan sendirinya, dan perlu diingat ini bukan kandang babi yang kalian kira.
+                    </p>
+                    <a href="#" class="pixel-button">Read More</a>
                 </div>
-                
-                <div class="footer-section">
-                    <h3 class="widget-title">Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                    </ul>
+            </div>
+            
+            <div class="book-card">
+                <div class="book-cover"></div>
+                <div class="book-info">
+                    <h3 class="book-title">Anak Babi</h3>
+                    <div class="book-meta">
+                        Kumpulan Cerpen | Guepedia | 2019<br>
+                        ISBN: 9786237391449 | 90 pages
+                    </div>
+                    <p class="book-synopsis">
+                        Anak babi sekumpulan cerita adalah kumpulan tulisan dari penulis sendiri yang masih berceceran, dikumpulkan tulisan tersebut menjadikan judul "Anak babi sekumpulan cerita" merupakan catatan dari berbagai kisah pengalaman suka duka dan cinta dirangkum dalam buku ini.
+                    </p>
+                    <a href="#" class="pixel-button">Read More</a>
                 </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="about" class="about">
+        <h2 class="section-title">About Wildan</h2>
+        <div class="about-content pixel-border">
+            <p>
+                Wildan Fauzy is an author from Indonesia. Write novels, short stories, essays. Pig pen and piglet book a collection of stories. Wildan was born in Cirebon, West Java, Indonesia, on March 26, 1996. Raised in a small village called Budur, about an hour's drive from the city of Cirebon.
+            </p>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="social-links">
+            <a href="https://facebook.com/wilfauzy" class="social-icon facebook" target="_blank" title="Facebook"></a>
+            <a href="https://instagram.com/wilfauzy" class="social-icon instagram" target="_blank" title="Instagram"></a>
+            <a href="https://pinterest.com/wilfauzy" class="social-icon pinterest" target="_blank" title="Pinterest"></a>
+            <a href="https://www.goodreads.com/author/show/19306620.Wildan_Fauzy" class="social-icon goodreads" target="_blank" title="Goodreads"></a>
+        </div>
+        <div class="copyright">
+            &copy; 2025 Wildan Fauzy. All rights reserved.
+        </div>
+    </footer>
+    
+    <script>
+        // Simple animation for pixel elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add hover effect to book cards
+            const bookCards = document.querySelectorAll('.book-card');
+            bookCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.borderColor = getRandomNeonColor();
+                });
                 
-                <div class="footer-section">
-                    <h3 class="widget-title">Subscribe</h3>
-                    <p>Stay updated with our latest posts and announcements.</p>
-                    <form class="subscribe-form">
-                        <div class="form-group
+                card.addEventListener('mouseleave', function() {
+                    this.style.borderColor = 'var(--neon-pink)';
+                });
+            });
+            
+            // Random neon color generation
+            function getRandomNeonColor() {
+                const colors = [
+                    'rgba(255, 105, 180, 0.85)', // pink
+                    'rgba(30, 144, 255, 0.85)',  // blue
+                    'rgba(50, 205, 50, 0.85)',   // green
+                    'rgba(255, 255, 0, 0.85)'    // yellow
+                ];
+                return colors[Math.floor(Math.random() * colors.length)];
+            }
+            
+            // Smooth scrolling for navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
