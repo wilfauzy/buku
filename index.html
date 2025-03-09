@@ -6,6 +6,89 @@
     <meta name="description" content="Wildan Fauzy - Penulis amatir dari Indonesia. Menulis novel, cerpen, dan esai. Lahir di Cirebon, Jawa Barat.">
     <title>Wildan Fauzy - Penulis amatir</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="canonical" href="https://wildan.fauzy.eu.org">
+    <meta name="keywords" content="Wildan Fauzy, penulis indonesia, novel, cerpen, kandang babi, anak babi, penulis amatir">
+    <meta name="author" content="Wildan Fauzy">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📝</text></svg>">
+    
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="Wildan Fauzy - Penulis amatir">
+    <meta property="og:description" content="Wildan Fauzy is an author from Indonesia. Write novels, short stories, essays.">
+    <meta property="og:image" content="https://wildan.fauzy.eu.org/gambar/wildan-fauzy.jpg">
+    <meta property="og:url" content="https://wildan.fauzy.eu.org">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Schema.org / Microdata -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Wildan Fauzy",
+      "url": "https://wildan.fauzy.eu.org",
+      "sameAs": [
+        "https://facebook.com/wilfauzy",
+        "https://instagram.com/wilfauzy",
+        "https://pinterest.com/wilfauzy",
+        "https://www.goodreads.com/author/show/19306620.Wildan_Fauzy",
+        "https://wilfauzy.medium.com"
+      ],
+      "email": "wildan@fauzy.eu.org",
+      "birthPlace": "Cirebon, Jawa Barat, Indonesia",
+      "birthDate": "1996-03-26",
+      "description": "Penulis amatir dari Indonesia. Menulis novel, cerpen, dan esai.",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Penulis Independen"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://wildan.fauzy.eu.org"
+      },
+      "image": "https://wildan.fauzy.eu.org/gambar/wildan-fauzy.jpg",
+      "jobTitle": "Penulis",
+      "alumniOf": "Indonesia",
+      "nationality": "Indonesia",
+      "knowsAbout": ["Penulisan Kreatif", "Novel", "Cerpen", "Esai"],
+      "workExample": [
+        {
+          "@type": "Book",
+          "name": "Kandang Babi",
+          "author": {
+            "@type": "Person",
+            "name": "Wildan Fauzy"
+          },
+          "bookFormat": "Paperback",
+          "datePublished": "2017",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Guepedia Publisher"
+          },
+          "isbn": "9786024430986",
+          "numberOfPages": "192",
+          "description": "Kandang babi hanya julukan sebuah tempat tinggal, Benda mati dan juga tidak bernapas, tetapi mempunyai nama, perkenalkan namanya adalah 'Kandang Babi'..."
+        },
+        {
+          "@type": "Book",
+          "name": "Anak Babi",
+          "author": {
+            "@type": "Person",
+            "name": "Wildan Fauzy"
+          },
+          "bookFormat": "Paperback",
+          "datePublished": "2019",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Guepedia Publisher"
+          },
+          "isbn": "9786237391449",
+          "numberOfPages": "90",
+          "description": "Anak babi sekumpulan cerita adalah kumpulan tulisan dari penulis sendiri yang masih berceceran, dikumpulkan tulisan tersebut menjadikan judul 'Anak babi sekumpulan cerita'..."
+        }
+      ]
+    }
+    </script>
     <style>
         /* Variables */
         :root {
@@ -716,7 +799,7 @@
                 </div>
                 <div class="about-text">
                     <p>Wildan Fauzy adalah seorang penulis dari Indonesia. Menulis novel, cerita pendek, esai. kandang babi dan anak babi merupakan kumpulan cerita.</p>
-                    <p>Wildan lahir di Cirebon, Jawa Barat, Indonesia, pada tanggal 26 Maret 1996. Dibesarkan di sebuah desa kecil, sekitar satu jam perjalanan dari kota Cirebon.</p>
+                    <p>Wildan lahir di Cirebon, Indonesia, pada tanggal 26 Maret 1996. Dibesarkan di sebuah desa kecil, sekitar satu jam perjalanan dari kota Cirebon.</p>
                     <p>Perjalanan menulis Wildan dimulai dengan cerita pendek dan esai, yang akhirnya membuahkan hasil berupa penerbitan novel pertamanya "Kandang Babi" pada tahun 2017, diikuti oleh kumpulan cerita pendek "Anak Babi" pada tahun 2019.</p>
                 </div>
             </div>
@@ -772,3 +855,21 @@
                 });
 
     </script>
+      <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        menuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking a nav link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
